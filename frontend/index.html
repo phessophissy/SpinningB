@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spinning Board Game | Stacks</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">🎰</span>
+        <h1>Spinning Board</h1>
+      </div>
+      <!-- REOWN AppKit Connect Button -->
+      <appkit-button></appkit-button>
+    </header>
+
+    <!-- Game Stats -->
+    <section class="game-stats">
+      <div class="stat-card">
+        <span class="stat-label">Round</span>
+        <span id="currentRound" class="stat-value">-</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Players</span>
+        <span id="playerCount" class="stat-value">-/10</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Pot</span>
+        <span id="totalPot" class="stat-value">- STX</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Highest Spin</span>
+        <span id="highestSpin" class="stat-value">-</span>
+      </div>
+    </section>
+
+    <!-- Game Rules -->
+    <section class="rules-card">
+      <h2>🎲 How to Play</h2>
+      <ul>
+        <li><strong>Entry Fee:</strong> 0.001 STX per spin</li>
+        <li><strong>Pick a number:</strong> 1 to 10</li>
+        <li><strong>Win condition:</strong> Highest spin wins!</li>
+        <li><strong>Prize:</strong> 50% of pot to winner(s)</li>
+        <li><strong>Ties:</strong> Winners split the prize equally</li>
+        <li><strong>Round ends:</strong> After 10 players join</li>
+      </ul>
+    </section>
+
+    <!-- Spin Selection -->
+    <section id="gameSection" class="game-section">
+      <h2>Choose Your Spin</h2>
+      <div class="spin-grid">
+        <button class="spin-btn" data-spin="1">1</button>
+        <button class="spin-btn" data-spin="2">2</button>
+        <button class="spin-btn" data-spin="3">3</button>
+        <button class="spin-btn" data-spin="4">4</button>
+        <button class="spin-btn" data-spin="5">5</button>
+        <button class="spin-btn" data-spin="6">6</button>
+        <button class="spin-btn" data-spin="7">7</button>
+        <button class="spin-btn" data-spin="8">8</button>
+        <button class="spin-btn" data-spin="9">9</button>
+        <button class="spin-btn" data-spin="10">10</button>
+      </div>
+      <button id="playBtn" class="btn btn-play" disabled>
+        <span id="playBtnText">Connect Wallet to Play</span>
+      </button>
+      <p class="fee-note">Entry fee: 0.001 STX + ~0.002 STX tx fee</p>
+    </section>
+
+    <!-- Status Messages -->
+    <div id="statusMessage" class="status-message hidden"></div>
+
+    <!-- Transaction History -->
+    <section id="txHistory" class="tx-history hidden">
+      <h3>Recent Transaction</h3>
+      <a id="txLink" href="#" target="_blank" class="tx-link"></a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Contract: <a href="https://explorer.stacks.co/txid/SP31G2FZ5JN87BATZMP4ZRYE5F7WZQDNEXJ7G7X97.spinning-board?chain=mainnet" target="_blank">SP31G2FZ...X97.spinning-board</a></p>
+      <p>Built on <a href="https://www.stacks.co" target="_blank">Stacks</a> | Bitcoin L2</p>
+    </footer>
+  </div>
+
+  <!-- REOWN AppKit (transport layer for wallet connection) -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>

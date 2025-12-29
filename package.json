@@ -1,0 +1,23 @@
+{
+  "name": "spinning-board-game",
+  "version": "1.0.0",
+  "description": "A spinning board game on Stacks blockchain (Mainnet)",
+  "main": "scripts/play-game.js",
+  "scripts": {
+    "play": "node scripts/play-game.js"
+  },
+  "keywords": [
+    "stacks",
+    "blockchain",
+    "game",
+    "clarity",
+    "mainnet"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@stacks/network": "^6.13.0",
+    "@stacks/transactions": "^6.13.0",
+    "@stacks/wallet-sdk": "^7.2.0"
+  }
+}
