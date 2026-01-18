@@ -635,3 +635,12 @@ body {
   animation: float 4s ease-in-out infinite;
   animation-delay: 0.5s;
 }
+
+.btn-secondary {
+  background: rgba(13, 33, 55, 0.8);
+  border-color: #1a4a6e;
+}
+.btn-secondary:hover {
+  background: rgba(21, 53, 80, 0.9);
+  border-color: #20b2aa;
+}
