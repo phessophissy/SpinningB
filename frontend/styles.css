@@ -509,3 +509,8 @@ body {
 .footer a:hover {
   color: #40e0d0;
 }
+
+.stat-value {
+  color: #20b2aa;
+  text-shadow: 0 0 10px rgba(32, 178, 170, 0.5);
+}
