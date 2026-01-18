@@ -644,3 +644,7 @@ body {
   background: rgba(21, 53, 80, 0.9);
   border-color: #20b2aa;
 }
+
+.tx-history h3 {
+  color: #7db8d9;
+}
