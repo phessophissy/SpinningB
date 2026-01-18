@@ -12,7 +12,7 @@
   --accent: #20b2aa;
   --success: #40e0d0;
   --error: #ef4444;
-  --bg: #0f0d1a;
+  --bg: #0a1929;
   --bg-card: #1a1625;
   --bg-card-hover: #252035;
   --text: #e2e8f0;
@@ -372,4 +372,5 @@ body {
     font-size: 1rem;
   }
 }
+
 
