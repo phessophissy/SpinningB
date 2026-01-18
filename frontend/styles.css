@@ -484,3 +484,9 @@ body {
   border-color: #20b2aa;
   box-shadow: 0 0 25px rgba(0, 119, 190, 0.7);
 }
+
+.btn-play {
+  background: linear-gradient(135deg, #0077be, #00a5cf, #20b2aa);
+  background-size: 200% 200%;
+  animation: shimmer 3s ease-in-out infinite;
+}
