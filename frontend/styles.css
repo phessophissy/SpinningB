@@ -13,7 +13,7 @@
   --success: #40e0d0;
   --error: #ef4444;
   --bg: #0a1929;
-  --bg-card: #1a1625;
+  --bg-card: #0d2137;
   --bg-card-hover: #252035;
   --text: #e2e8f0;
   --text-muted: #94a3b8;
@@ -372,5 +372,6 @@ body {
     font-size: 1rem;
   }
 }
+
 
 
