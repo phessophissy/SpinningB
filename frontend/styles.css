@@ -657,3 +657,7 @@ body {
 .container {
   padding-bottom: 40px;
 }
+
+.game-stats {
+  gap: 16px;
+}
