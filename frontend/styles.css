@@ -514,3 +514,10 @@ body {
   color: #20b2aa;
   text-shadow: 0 0 10px rgba(32, 178, 170, 0.5);
 }
+
+.rules-card li {
+  border-bottom-color: #1a4a6e;
+}
+.rules-card strong {
+  color: #20b2aa;
+}
