@@ -1,3 +1,10 @@
+/*
+ * ===========================================
+ * BLUE SEA THEME - Ocean Spin Edition
+ * A calming blue ocean theme with waves,
+ * sea foam accents, and underwater vibes
+ * ===========================================
+ */
 /* Reset & Base */
 * {
   margin: 0;
@@ -6,18 +13,18 @@
 }
 
 :root {
-  --primary: #6366f1;
-  --primary-hover: #4f46e5;
-  --secondary: #1e1b4b;
-  --accent: #f59e0b;
-  --success: #10b981;
+  --primary: #0077be;
+  --primary-hover: #005a8c;
+  --secondary: #0a1628;
+  --accent: #20b2aa;
+  --success: #40e0d0;
   --error: #ef4444;
-  --bg: #0f0d1a;
-  --bg-card: #1a1625;
-  --bg-card-hover: #252035;
-  --text: #e2e8f0;
-  --text-muted: #94a3b8;
-  --border: #2d2640;
+  --bg: #0a1929;
+  --bg-card: #0d2137;
+  --bg-card-hover: #153550;
+  --text: #e0f4ff;
+  --text-muted: #7db8d9;
+  --border: #1a4a6e;
 }
 
 body {
@@ -26,8 +33,8 @@ body {
   color: var(--text);
   min-height: 100vh;
   background-image: 
-    radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 50%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(0, 119, 190, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(32, 178, 170, 0.12) 0%, transparent 50%);
 }
 
 .container {
@@ -53,13 +60,14 @@ body {
 }
 
 .logo-icon {
+  animation: float 3s ease-in-out infinite;
   font-size: 2rem;
 }
 
 .logo h1 {
   font-size: 1.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
+  background: linear-gradient(135deg, #0077be, #20b2aa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -105,14 +113,15 @@ body {
   width: 100%;
   padding: 16px;
   font-size: 1.125rem;
-  background: linear-gradient(135deg, var(--primary), #8b5cf6);
+  background: linear-gradient(135deg, #0077be, #00a5cf);
   color: white;
   margin-top: 20px;
 }
 
 .btn-play:hover:not(:disabled) {
+  animation: wave 0.5s ease-in-out;
   transform: translateY(-2px);
-  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 119, 190, 0.4);
 }
 
 .btn-play:disabled {
@@ -155,6 +164,7 @@ body {
 }
 
 .stat-card:hover {
+  animation: ripple 0.6s ease-out;
   transform: translateY(-2px);
 }
 
@@ -248,7 +258,7 @@ body {
   border-color: var(--primary);
   color: white;
   transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 20px rgba(0, 119, 190, 0.6);
 }
 
 .fee-note {
@@ -268,19 +278,19 @@ body {
 }
 
 .status-message.success {
-  background: rgba(16, 185, 129, 0.1);
+  background: rgba(64, 224, 208, 0.15);
   border: 1px solid var(--success);
   color: var(--success);
 }
 
 .status-message.error {
-  background: rgba(239, 68, 68, 0.1);
+  background: rgba(220, 53, 69, 0.12);
   border: 1px solid var(--error);
   color: var(--error);
 }
 
 .status-message.info {
-  background: rgba(99, 102, 241, 0.1);
+  background: rgba(0, 119, 190, 0.15);
   border: 1px solid var(--primary);
   color: var(--primary);
 }
@@ -372,3 +382,326 @@ body {
     font-size: 1rem;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Sea Wave Animation */
+@keyframes wave {
+  0% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(-2%) translateY(2px); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+@keyframes bubble {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  100% { transform: translateY(-20px) scale(1.1); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes ripple {
+  0% { box-shadow: 0 0 0 0 rgba(0, 119, 190, 0.4); }
+  100% { box-shadow: 0 0 0 20px rgba(0, 119, 190, 0); }
+}
+
+
+
+
+/* Sea gradient overlay */
+.container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0,119,190,0.05) 0%, transparent 50%, rgba(32,178,170,0.05) 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Wave border effect */
+.header {
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, transparent, #0077be, #20b2aa, #0077be, transparent) 1;
+}
+
+/* Glassmorphism sea effect */
+.game-section {
+  background: rgba(13, 33, 55, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.rules-card {
+  background: rgba(13, 33, 55, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.stat-card {
+  background: rgba(13, 33, 55, 0.75);
+  backdrop-filter: blur(6px);
+}
+
+.footer {
+  border-top: 2px solid transparent;
+  border-image: linear-gradient(90deg, transparent, #20b2aa, #0077be, #20b2aa, transparent) 1;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #0077be, #00a5cf, #0077be);
+  background-size: 200% 100%;
+}
+
+.spin-btn {
+  background: linear-gradient(145deg, #0d2137, #153550);
+  border: 2px solid #1a4a6e;
+}
+
+.spin-btn:hover {
+  background: linear-gradient(145deg, #153550, #1a5a7e);
+  border-color: #20b2aa;
+}
+
+.spin-btn.selected {
+  background: linear-gradient(145deg, #0077be, #00a5cf);
+  border-color: #20b2aa;
+  box-shadow: 0 0 25px rgba(0, 119, 190, 0.7);
+}
+
+.btn-play {
+  background: linear-gradient(135deg, #0077be, #00a5cf, #20b2aa);
+  background-size: 200% 200%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.tx-history {
+  background: rgba(13, 33, 55, 0.6);
+  border: 1px solid #1a4a6e;
+}
+
+.tx-link {
+  color: #20b2aa;
+}
+.tx-link:hover {
+  color: #40e0d0;
+}
+
+.footer a {
+  color: #20b2aa;
+}
+.footer a:hover {
+  color: #40e0d0;
+}
+
+.stat-value {
+  color: #20b2aa;
+  text-shadow: 0 0 10px rgba(32, 178, 170, 0.5);
+}
+
+.rules-card li {
+  border-bottom-color: #1a4a6e;
+}
+.rules-card strong {
+  color: #20b2aa;
+}
+
+/* Decorative bubbles */
+.container::after {
+  content: '';
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: 
+    radial-gradient(circle at 10% 80%, rgba(32, 178, 170, 0.1) 0%, transparent 8%),
+    radial-gradient(circle at 90% 20%, rgba(0, 119, 190, 0.08) 0%, transparent 6%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.user-info {
+  background: rgba(13, 33, 55, 0.7);
+  border: 1px solid #1a4a6e;
+}
+
+#userAddress {
+  color: #40e0d0;
+}
+
+.fee-note {
+  color: #7db8d9;
+}
+
+.loading::after {
+  border-top-color: #20b2aa;
+}
+
+.status-message.success {
+  background: rgba(64, 224, 208, 0.15);
+  border-color: #40e0d0;
+  color: #40e0d0;
+}
+
+.status-message.info {
+  background: rgba(0, 119, 190, 0.15);
+  border-color: #0077be;
+  color: #00a5cf;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a1929;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a4a6e;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0077be;
+}
+
+/* Text selection */
+::selection {
+  background: rgba(0, 119, 190, 0.4);
+  color: #e0f4ff;
+}
+
+/* Focus states */
+button:focus {
+  outline: 2px solid #20b2aa;
+  outline-offset: 2px;
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 5px rgba(0, 119, 190, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(0, 119, 190, 0.8); }
+}
+
+@keyframes oceanWave {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  animation: oceanWave 15s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+.stat-card {
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+}
+.stat-card:hover {
+  box-shadow: 0 5px 25px rgba(0, 119, 190, 0.3);
+}
+
+.game-section {
+  box-shadow: 0 0 30px rgba(0, 119, 190, 0.1);
+}
+
+.rules-card {
+  box-shadow: 0 0 20px rgba(32, 178, 170, 0.1);
+}
+
+.header {
+  background: rgba(10, 25, 41, 0.5);
+  backdrop-filter: blur(5px);
+  margin: -20px -20px 24px -20px;
+  padding: 20px;
+}
+
+.logo h1 {
+  animation: float 4s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.btn-secondary {
+  background: rgba(13, 33, 55, 0.8);
+  border-color: #1a4a6e;
+}
+.btn-secondary:hover {
+  background: rgba(21, 53, 80, 0.9);
+  border-color: #20b2aa;
+}
+
+.tx-history h3 {
+  color: #7db8d9;
+}
+
+.footer {
+  margin-top: 20px;
+  padding-top: 24px;
+}
+
+.container {
+  padding-bottom: 40px;
+}
+
+.game-stats {
+  gap: 16px;
+}
+
+.spin-grid {
+  gap: 12px;
+}
+
+.btn {
+  border-radius: 16px;
+}
+
+.spin-btn {
+  border-radius: 14px;
+}
+
+.stat-card {
+  border-radius: 20px;
+}
+
+.rules-card {
+  border-radius: 20px;
+}
+
+.game-section {
+  border-radius: 20px;
+}
+
+.tx-history {
+  border-radius: 16px;
+}
+
+.status-message {
+  border-radius: 16px;
+}
+
+.user-info {
+  border-radius: 16px;
+}
+
