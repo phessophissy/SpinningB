@@ -521,3 +521,18 @@ body {
 .rules-card strong {
   color: #20b2aa;
 }
+
+/* Decorative bubbles */
+.container::after {
+  content: '';
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: 
+    radial-gradient(circle at 10% 80%, rgba(32, 178, 170, 0.1) 0%, transparent 8%),
+    radial-gradient(circle at 90% 20%, rgba(0, 119, 190, 0.08) 0%, transparent 6%);
+  pointer-events: none;
+  z-index: -1;
+}
