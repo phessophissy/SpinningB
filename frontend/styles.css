@@ -463,3 +463,8 @@ body {
   border-top: 2px solid transparent;
   border-image: linear-gradient(90deg, transparent, #20b2aa, #0077be, #20b2aa, transparent) 1;
 }
+
+.btn-primary {
+  background: linear-gradient(90deg, #0077be, #00a5cf, #0077be);
+  background-size: 200% 100%;
+}
