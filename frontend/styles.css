@@ -669,3 +669,7 @@ body {
 .btn {
   border-radius: 16px;
 }
+
+.spin-btn {
+  border-radius: 14px;
+}
