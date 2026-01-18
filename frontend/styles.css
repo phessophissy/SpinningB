@@ -440,3 +440,10 @@ body {
   border-bottom: 2px solid transparent;
   border-image: linear-gradient(90deg, transparent, #0077be, #20b2aa, #0077be, transparent) 1;
 }
+
+/* Glassmorphism sea effect */
+.game-section {
+  background: rgba(13, 33, 55, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
