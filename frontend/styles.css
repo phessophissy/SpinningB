@@ -536,3 +536,8 @@ body {
   pointer-events: none;
   z-index: -1;
 }
+
+.user-info {
+  background: rgba(13, 33, 55, 0.7);
+  border: 1px solid #1a4a6e;
+}
