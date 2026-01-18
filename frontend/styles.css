@@ -673,3 +673,7 @@ body {
 .spin-btn {
   border-radius: 14px;
 }
+
+.stat-card {
+  border-radius: 20px;
+}
