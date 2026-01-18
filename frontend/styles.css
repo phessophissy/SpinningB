@@ -421,3 +421,16 @@ body {
 
 
 
+
+/* Sea gradient overlay */
+.container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0,119,190,0.05) 0%, transparent 50%, rgba(32,178,170,0.05) 100%);
+  pointer-events: none;
+  z-index: -1;
+}
