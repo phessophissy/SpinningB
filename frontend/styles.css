@@ -105,7 +105,7 @@ body {
   width: 100%;
   padding: 16px;
   font-size: 1.125rem;
-  background: linear-gradient(135deg, var(--primary), #8b5cf6);
+  background: linear-gradient(135deg, #0077be, #00a5cf);
   color: white;
   margin-top: 20px;
 }
@@ -372,6 +372,7 @@ body {
     font-size: 1rem;
   }
 }
+
 
 
 
