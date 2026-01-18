@@ -468,3 +468,8 @@ body {
   background: linear-gradient(90deg, #0077be, #00a5cf, #0077be);
   background-size: 200% 100%;
 }
+
+.spin-btn {
+  background: linear-gradient(145deg, #0d2137, #153550);
+  border: 2px solid #1a4a6e;
+}
