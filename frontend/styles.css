@@ -619,3 +619,7 @@ body {
 .game-section {
   box-shadow: 0 0 30px rgba(0, 119, 190, 0.1);
 }
+
+.rules-card {
+  box-shadow: 0 0 20px rgba(32, 178, 170, 0.1);
+}
