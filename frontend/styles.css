@@ -502,3 +502,10 @@ body {
 .tx-link:hover {
   color: #40e0d0;
 }
+
+.footer a {
+  color: #20b2aa;
+}
+.footer a:hover {
+  color: #40e0d0;
+}
