@@ -745,3 +745,22 @@ body {
 .maroon-glow {
   box-shadow: 0 0 20px rgba(128, 0, 0, 0.5);
 }
+
+/* Stripe body overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 40px,
+    rgba(128, 0, 0, 0.03) 40px,
+    rgba(128, 0, 0, 0.03) 80px
+  );
+  pointer-events: none;
+  z-index: -1;
+}
