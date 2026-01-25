@@ -507,14 +507,14 @@ body {
   color: #d4af37;
 }
 .tx-link:hover {
-  color: #40e0d0;
+  color: #c9a227;
 }
 
 .footer a {
   color: #d4af37;
 }
 .footer a:hover {
-  color: #40e0d0;
+  color: #c9a227;
 }
 
 .stat-value {
@@ -550,7 +550,7 @@ body {
 }
 
 #userAddress {
-  color: #40e0d0;
+  color: #c9a227;
 }
 
 .fee-note {
@@ -563,8 +563,8 @@ body {
 
 .status-message.success {
   background: rgba(64, 224, 208, 0.15);
-  border-color: #40e0d0;
-  color: #40e0d0;
+  border-color: #c9a227;
+  color: #c9a227;
 }
 
 .status-message.info {
