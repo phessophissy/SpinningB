@@ -736,3 +736,8 @@ body {
     rgba(212, 175, 55, 0.1) 10px
   );
 }
+
+.gold-border {
+  border: 2px solid #d4af37;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
