@@ -468,7 +468,7 @@ body {
 
 .footer {
   border-top: 2px solid transparent;
-  border-image: linear-gradient(90deg, transparent, #20b2aa, #800000, #d4af37, transparent) 1;
+  border-image: linear-gradient(90deg, transparent, #d4af37, #800000, #d4af37, transparent) 1;
 }
 
 .btn-primary {
@@ -483,17 +483,17 @@ body {
 
 .spin-btn:hover {
   background: linear-gradient(145deg, #153550, #1a5a7e);
-  border-color: #20b2aa;
+  border-color: #d4af37;
 }
 
 .spin-btn.selected {
   background: linear-gradient(145deg, #800000, #a52a2a);
-  border-color: #20b2aa;
+  border-color: #d4af37;
   box-shadow: 0 0 25px rgba(0, 119, 190, 0.7);
 }
 
 .btn-play {
-  background: linear-gradient(135deg, #800000, #a52a2a, #20b2aa);
+  background: linear-gradient(135deg, #800000, #a52a2a, #d4af37);
   background-size: 200% 200%;
   animation: shimmer 3s ease-in-out infinite;
 }
@@ -504,21 +504,21 @@ body {
 }
 
 .tx-link {
-  color: #20b2aa;
+  color: #d4af37;
 }
 .tx-link:hover {
   color: #40e0d0;
 }
 
 .footer a {
-  color: #20b2aa;
+  color: #d4af37;
 }
 .footer a:hover {
   color: #40e0d0;
 }
 
 .stat-value {
-  color: #20b2aa;
+  color: #d4af37;
   text-shadow: 0 0 10px rgba(32, 178, 170, 0.5);
 }
 
@@ -526,7 +526,7 @@ body {
   border-bottom-color: #1a4a6e;
 }
 .rules-card strong {
-  color: #20b2aa;
+  color: #d4af37;
 }
 
 /* Decorative bubbles */
@@ -558,7 +558,7 @@ body {
 }
 
 .loading::after {
-  border-top-color: #20b2aa;
+  border-top-color: #d4af37;
 }
 
 .status-message.success {
@@ -596,7 +596,7 @@ body {
 
 /* Focus states */
 button:focus {
-  outline: 2px solid #20b2aa;
+  outline: 2px solid #d4af37;
   outline-offset: 2px;
 }
 
@@ -649,7 +649,7 @@ body {
 }
 .btn-secondary:hover {
   background: rgba(21, 53, 80, 0.9);
-  border-color: #20b2aa;
+  border-color: #d4af37;
 }
 
 .tx-history h3 {
