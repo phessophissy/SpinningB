@@ -477,12 +477,12 @@ body {
 }
 
 .spin-btn {
-  background: linear-gradient(145deg, #0d2137, #153550);
+  background: linear-gradient(145deg, #0d2137, #3d1515);
   border: 2px solid #4a1a1a;
 }
 
 .spin-btn:hover {
-  background: linear-gradient(145deg, #153550, #1a5a7e);
+  background: linear-gradient(145deg, #3d1515, #1a5a7e);
   border-color: #d4af37;
 }
 
