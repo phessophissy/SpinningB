@@ -859,3 +859,30 @@ body::before {
   position: relative;
   overflow: hidden;
 }
+
+/* Button Stripe Hover Effect */
+.btn-play::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 10px,
+    rgba(212, 175, 55, 0.1) 10px,
+    rgba(212, 175, 55, 0.1) 20px
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-play:hover::before {
+  left: 0;
+}
+
+.btn-play {
+  position: relative;
+  overflow: hidden;
+}
