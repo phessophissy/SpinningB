@@ -71,7 +71,7 @@ const appKit = createAppKit({
   networks: [stacksMainnet],
   metadata: {
     name: "SpinningB - Maroon Stripe",
-    description: "A decentralized spinning board game on Stacks",
+    description: "Maroon Stripe Edition - Spin to Win on Stacks",
     url: window.location.origin,
     icons: ["https://stacks.co/favicon.ico"],
   },
