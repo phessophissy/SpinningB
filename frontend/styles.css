@@ -1600,3 +1600,15 @@ a:hover {
     --text: #fff5e6;
   }
 }
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .spin-btn {
+    min-height: 60px;
+    min-width: 60px;
+  }
+  
+  .btn-play {
+    min-height: 56px;
+  }
+}
