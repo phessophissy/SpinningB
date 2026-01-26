@@ -1191,3 +1191,16 @@ body::after {
   background-clip: text;
   animation: shimmer 3s ease-in-out infinite;
 }
+
+/* Loading Button Stripe Background */
+.btn.loading {
+  background: repeating-linear-gradient(
+    -45deg,
+    #800000,
+    #800000 10px,
+    #5c0000 10px,
+    #5c0000 20px
+  );
+  background-size: 200% 200%;
+  animation: stripeMove 1s linear infinite;
+}
