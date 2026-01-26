@@ -1559,3 +1559,19 @@ a:hover {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* Tablet layout adjustments */
+@media (min-width: 768px) {
+  .container {
+    max-width: 700px;
+    padding: 30px;
+  }
+  
+  .spin-grid {
+    gap: 16px;
+  }
+  
+  .spin-btn {
+    font-size: 1.5rem;
+  }
+}
