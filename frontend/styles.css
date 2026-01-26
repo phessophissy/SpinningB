@@ -1612,3 +1612,14 @@ a:hover {
     min-height: 56px;
   }
 }
+
+/* Fine pointer hover effects */
+@media (hover: hover) and (pointer: fine) {
+  .spin-btn:hover {
+    transform: scale(1.08);
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-4px);
+  }
+}
