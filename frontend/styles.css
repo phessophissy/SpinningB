@@ -1048,3 +1048,16 @@ body::after {
   margin-right: 10px;
   font-size: 0.8em;
 }
+
+/* Container Stripe Side Borders */
+.container {
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-image: repeating-linear-gradient(
+    180deg,
+    #800000,
+    #800000 10px,
+    #d4af37 10px,
+    #d4af37 20px
+  ) 1;
+}
