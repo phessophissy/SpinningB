@@ -815,3 +815,25 @@ body::before {
   position: relative;
   overflow: hidden;
 }
+
+/* Rules Card Stripe Top Border */
+.rules-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    #800000,
+    #800000 6px,
+    #5c0000 6px,
+    #5c0000 12px
+  );
+}
+
+.rules-card {
+  position: relative;
+  overflow: hidden;
+}
