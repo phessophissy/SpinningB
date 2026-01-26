@@ -1295,3 +1295,11 @@ body::after {
     0 0 0 6px #800000,
     0 10px 40px rgba(128, 0, 0, 0.4);
 }
+
+/* Stripe Shadow Effect */
+.game-section {
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(128, 0, 0, 0.15),
+    inset 0 1px 0 rgba(212, 175, 55, 0.1);
+}
