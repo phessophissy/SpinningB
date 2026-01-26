@@ -1468,3 +1468,18 @@ a:hover {
   );
   margin: 20px 0;
 }
+
+/* Stripe Box Utility */
+.stripe-box {
+  border: 3px solid transparent;
+  background: 
+    linear-gradient(#2a0f0f, #2a0f0f) padding-box,
+    repeating-linear-gradient(
+      45deg,
+      #800000,
+      #800000 5px,
+      #d4af37 5px,
+      #d4af37 10px
+    ) border-box;
+  border-radius: 12px;
+}
