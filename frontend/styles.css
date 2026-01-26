@@ -930,3 +930,24 @@ body::before {
   position: relative;
   padding-left: 20px;
 }
+
+/* User Info Stripe Border */
+.user-info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    #d4af37,
+    #d4af37 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+.user-info {
+  position: relative;
+}
