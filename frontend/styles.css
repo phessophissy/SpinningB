@@ -1388,3 +1388,8 @@ body::after {
   0% { background-position: 0 0; }
   100% { background-position: 20px 0; }
 }
+
+/* User Info Hover Border Animation */
+.user-info:hover::before {
+  animation: borderStripe 1s linear infinite;
+}
