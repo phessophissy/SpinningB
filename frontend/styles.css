@@ -1040,3 +1040,11 @@ body::after {
   color: #d4af37;
   margin-left: 8px;
 }
+
+/* Rules List Stripe Bullets */
+.rules-card li::before {
+  content: "▰";
+  color: #800000;
+  margin-right: 10px;
+  font-size: 0.8em;
+}
