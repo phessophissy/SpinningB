@@ -1027,3 +1027,16 @@ body::after {
   padding: 16px;
   border-radius: 12px;
 }
+
+/* Fee Note Stripe Decoration */
+.fee-note::before {
+  content: "⬥";
+  color: #800000;
+  margin-right: 8px;
+}
+
+.fee-note::after {
+  content: "⬥";
+  color: #d4af37;
+  margin-left: 8px;
+}
