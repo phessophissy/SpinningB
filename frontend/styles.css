@@ -1575,3 +1575,19 @@ a:hover {
     font-size: 1.5rem;
   }
 }
+
+/* Large screen enhancements */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 800px;
+  }
+  
+  .game-section {
+    padding: 32px;
+  }
+  
+  .btn-play {
+    padding: 20px;
+    font-size: 1.25rem;
+  }
+}
