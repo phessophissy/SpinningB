@@ -781,3 +781,20 @@ body::before {
     #d4af37 16px
   );
 }
+
+/* Striped Footer Border */
+.footer::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    #d4af37,
+    #d4af37 8px,
+    #800000 8px,
+    #800000 16px
+  );
+}
