@@ -1061,3 +1061,16 @@ body::after {
     #d4af37 20px
   ) 1;
 }
+
+/* Stat Label Stripe Accent */
+.stat-label {
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.stat-label::before {
+  content: "━";
+  color: #800000;
+  margin-right: 4px;
+}
