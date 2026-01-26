@@ -1433,3 +1433,13 @@ a:hover {
     #5c0000 10px
   );
 }
+
+.gold-stripe-horizontal {
+  background: repeating-linear-gradient(
+    90deg,
+    #d4af37,
+    #d4af37 5px,
+    #c9a227 5px,
+    #c9a227 10px
+  );
+}
