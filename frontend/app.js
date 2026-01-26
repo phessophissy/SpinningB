@@ -70,7 +70,7 @@ const appKit = createAppKit({
   projectId: REOWN_PROJECT_ID,
   networks: [stacksMainnet],
   metadata: {
-    name: "Spinning Board Game",
+    name: "SpinningB - Maroon Stripe",
     description: "A decentralized spinning board game on Stacks",
     url: window.location.origin,
     icons: ["https://stacks.co/favicon.ico"],
@@ -156,7 +156,7 @@ function onWalletConnected(address) {
     // Prompt Stacks wallet connection for transaction signing
     showConnect({
       appDetails: {
-        name: "Spinning Board Game",
+        name: "SpinningB - Maroon Stripe",
         icon: "https://stacks.co/favicon.ico",
       },
       onFinish: () => {
