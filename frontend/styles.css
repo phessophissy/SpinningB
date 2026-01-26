@@ -1623,3 +1623,12 @@ a:hover {
     transform: translateY(-4px);
   }
 }
+
+/* Safe area insets for notched devices */
+@supports (padding: max(0px)) {
+  .container {
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+    padding-bottom: max(40px, env(safe-area-inset-bottom));
+  }
+}
