@@ -1455,3 +1455,16 @@ a:hover {
     #5c0000 22px
   );
 }
+
+/* Thin Stripe Separator */
+.stripe-separator {
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    #800000,
+    #800000 4px,
+    #d4af37 4px,
+    #d4af37 8px
+  );
+  margin: 20px 0;
+}
