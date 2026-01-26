@@ -1591,3 +1591,12 @@ a:hover {
     font-size: 1.25rem;
   }
 }
+
+/* Dark mode explicit support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a0505;
+    --bg-card: #2a0f0f;
+    --text: #fff5e6;
+  }
+}
