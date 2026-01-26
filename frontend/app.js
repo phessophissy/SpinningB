@@ -77,7 +77,7 @@ const appKit = createAppKit({
   },
   themeMode: "dark",
   themeVariables: {
-    "--w3m-accent": "#6366f1",
+    "--w3m-accent": "#800000",
     "--w3m-border-radius-master": "12px",
   },
 });
