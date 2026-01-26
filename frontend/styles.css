@@ -1371,3 +1371,9 @@ body::after {
   transform: scale(0.95);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+/* Play Button Active State */
+.btn-play:active:not(:disabled) {
+  transform: scale(0.98);
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.5);
+}
