@@ -1146,3 +1146,14 @@ body::after {
 .footer a:hover::after {
   width: 100%;
 }
+
+/* Transaction Link Stripe Hover */
+.tx-link {
+  position: relative;
+  display: inline-block;
+}
+
+.tx-link::before {
+  content: "⬥ ";
+  color: #800000;
+}
