@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SpinningB | Maroon Stripe Edition</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <div class="container">
     <!-- Header -->
@@ -14,8 +16,13 @@
         <span class="logo-icon">🎲</span>
         <h1>SpinningB</h1>
       </div>
-      <!-- REOWN AppKit Connect Button -->
-      <appkit-button></appkit-button>
+      <!-- Wallet Connection -->
+      <div class="wallet-section">
+        <div id="walletInfo" class="wallet-info hidden">
+          <span id="walletAddress" class="wallet-address"></span>
+        </div>
+        <button id="connectBtn" class="btn btn-connect">Connect Wallet</button>
+      </div>
     </header>
 
     <!-- Game Stats -->
@@ -83,29 +90,15 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <p>Contract: <a href="https://explorer.stacks.co/txid/SP31G2FZ5JN87BATZMP4ZRYE5F7WZQDNEXJ7G7X97.spinning-board?chain=mainnet" target="_blank">SP31G2FZ...X97.spinning-board</a></p>
-      <p>Built on <a href="https://www.stacks.co" target="_blank">Stacks</a> |  Maroon Stripe Edition</p>
+      <p>Contract: <a
+          href="https://explorer.stacks.co/txid/SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09.spinning-board?chain=mainnet"
+          target="_blank">SP2KYZRN...E09.spinning-board</a></p>
+      <p>Built on <a href="https://www.stacks.co" target="_blank">Stacks</a> | Maroon Stripe Edition</p>
     </footer>
   </div>
 
-  <!-- REOWN AppKit (transport layer for wallet connection) -->
+  <!-- Stacks Connect (bundled via build tool) -->
   <script type="module" src="app.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

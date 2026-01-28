@@ -3,14 +3,14 @@
 ;; Min 2 players, Max 10 players per round
 ;; 50% to winner(s), 50% to game creator
 ;; Entry fee: 0.001 STX (1000 microSTX)
-;; Deployer: SP31G2FZ5JN87BATZMP4ZRYE5F7WZQDNEXJ7G7X97
+;; Deployer: SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09
 
 ;; ============================================
 ;; Constants
 ;; ============================================
 
 ;; Game creator receives 50% of pot (deployer)
-(define-constant GAME_CREATOR 'SP31G2FZ5JN87BATZMP4ZRYE5F7WZQDNEXJ7G7X97)
+(define-constant GAME_CREATOR 'SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09)
 
 ;; Entry fee: 0.001 STX = 1000 microSTX
 (define-constant ENTRY_FEE u1000)

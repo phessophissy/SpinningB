@@ -1,35 +1,30 @@
 /**
  * Spinning Board Game - Frontend Application
- * Uses REOWN AppKit as transport layer for wallet connection
- * Uses @stacks/connect for Stacks transaction signing
+ * Uses @stacks/connect for wallet connection and transaction signing
  * 
  * Stacks Mainnet
  */
 
-import { createAppKit } from "https://cdn.jsdelivr.net/npm/@reown/appkit@latest/+esm";
-import { StacksMainnet } from "https://cdn.jsdelivr.net/npm/@stacks/network@6.13.0/+esm";
-import { 
-  openContractCall, 
+import {
+  openContractCall,
   showConnect,
   AppConfig,
-  UserSession 
-} from "https://cdn.jsdelivr.net/npm/@stacks/connect@7.7.1/+esm";
-import { 
-  uintCV, 
-  PostConditionMode 
-} from "https://cdn.jsdelivr.net/npm/@stacks/transactions@6.13.0/+esm";
+  UserSession
+} from "@stacks/connect";
+import {
+  uintCV,
+  PostConditionMode
+} from "@stacks/transactions";
+import { StacksMainnet } from "@stacks/network";
 
 // ============================================
 // Configuration
 // ============================================
 
-const CONTRACT_ADDRESS = "SP31G2FZ5JN87BATZMP4ZRYE5F7WZQDNEXJ7G7X97";
+const CONTRACT_ADDRESS = "SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09";
 const CONTRACT_NAME = "spinning-board";
 const NETWORK = new StacksMainnet();
 const API_URL = "https://stacks-node-api.mainnet.stacks.co";
-
-// REOWN Project ID
-const REOWN_PROJECT_ID = "aeba2209111bfd0d139b63ee8ecc7e0a";
 
 // ============================================
 // State
@@ -37,65 +32,24 @@ const REOWN_PROJECT_ID = "aeba2209111bfd0d139b63ee8ecc7e0a";
 
 let selectedSpin = null;
 let connectedAddress = null;
-let userSession = null;
 
-// ============================================
-// Initialize REOWN AppKit
-// ============================================
-
-// Stacks network configuration for REOWN
-const stacksMainnet = {
-  id: "stacks:1",
-  name: "Stacks Mainnet",
-  nativeCurrency: {
-    name: "Stacks",
-    symbol: "STX",
-    decimals: 6,
-  },
-  rpcUrls: {
-    default: {
-      http: ["https://stacks-node-api.mainnet.stacks.co"],
-    },
-  },
-  blockExplorers: {
-    default: {
-      name: "Stacks Explorer",
-      url: "https://explorer.stacks.co",
-    },
-  },
-};
-
-// Initialize AppKit
-const appKit = createAppKit({
-  projectId: REOWN_PROJECT_ID,
-  networks: [stacksMainnet],
-  metadata: {
-    name: "SpinningB - Maroon Stripe",
-    description: "Maroon Stripe Edition - Spin to Win on Stacks",
-    url: window.location.origin,
-    icons: ["https://stacks.co/favicon.ico"],
-  },
-  themeMode: "dark",
-  themeVariables: {
-    "--w3m-accent": "#800000",
-    "--w3m-border-radius-master": "12px",
-  },
-});
-
-// Initialize Stacks UserSession for transaction signing
+// Initialize Stacks UserSession
 const appConfig = new AppConfig(["store_write"]);
-userSession = new UserSession({ appConfig });
+const userSession = new UserSession({ appConfig });
 
 // ============================================
 // DOM Elements
 // ============================================
 
+const connectBtn = document.getElementById("connectBtn");
 const playBtn = document.getElementById("playBtn");
 const playBtnText = document.getElementById("playBtnText");
 const statusMessage = document.getElementById("statusMessage");
 const txHistory = document.getElementById("txHistory");
 const txLink = document.getElementById("txLink");
 const spinButtons = document.querySelectorAll(".spin-btn");
+const walletInfo = document.getElementById("walletInfo");
+const walletAddress = document.getElementById("walletAddress");
 
 // Stat elements
 const currentRoundEl = document.getElementById("currentRound");
@@ -113,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function initializeApp() {
   // Setup event listeners
+  connectBtn.addEventListener("click", connectWallet);
   playBtn.addEventListener("click", playGame);
 
   // Spin button selection
@@ -120,21 +75,12 @@ function initializeApp() {
     btn.addEventListener("click", () => selectSpin(btn));
   });
 
-  // Listen for REOWN connection state changes
-  appKit.subscribeState((state) => {
-    console.log("AppKit state:", state);
-    if (state.selectedNetworkId && state.address) {
-      onWalletConnected(state.address);
-    } else {
-      onWalletDisconnected();
-    }
-  });
-
-  // Check if Stacks wallet already connected
+  // Check if wallet already connected
   if (userSession.isUserSignedIn()) {
     const userData = userSession.loadUserData();
     connectedAddress = userData.profile.stxAddress.mainnet;
     updateUIForConnectedWallet();
+    checkIfAlreadyPlayed();
   }
 
   // Load game stats
@@ -145,44 +91,49 @@ function initializeApp() {
 }
 
 // ============================================
-// Wallet Connection (REOWN as transport, Stacks Connect for signing)
+// Wallet Connection
 // ============================================
 
-function onWalletConnected(address) {
-  console.log("Wallet connected via REOWN:", address);
-  
-  // REOWN connected - now connect Stacks wallet for signing
-  if (!userSession.isUserSignedIn()) {
-    // Prompt Stacks wallet connection for transaction signing
-    showConnect({
-      appDetails: {
-        name: "SpinningB - Maroon Stripe",
-        icon: "https://stacks.co/favicon.ico",
-      },
-      onFinish: () => {
-        const userData = userSession.loadUserData();
-        connectedAddress = userData.profile.stxAddress.mainnet;
-        updateUIForConnectedWallet();
-        checkIfAlreadyPlayed();
-      },
-      userSession,
-    });
-  } else {
-    const userData = userSession.loadUserData();
-    connectedAddress = userData.profile.stxAddress.mainnet;
-    updateUIForConnectedWallet();
-    checkIfAlreadyPlayed();
-  }
+function connectWallet() {
+  showConnect({
+    appDetails: {
+      name: "SpinningB - Maroon Stripe",
+      icon: "https://stacks.co/favicon.ico",
+    },
+    onFinish: () => {
+      const userData = userSession.loadUserData();
+      connectedAddress = userData.profile.stxAddress.mainnet;
+      updateUIForConnectedWallet();
+      checkIfAlreadyPlayed();
+    },
+    onCancel: () => {
+      showStatus("Wallet connection cancelled", "info");
+    },
+    userSession,
+  });
 }
 
-function onWalletDisconnected() {
-  console.log("Wallet disconnected");
-  connectedAddress = null;
+function disconnectWallet() {
   userSession.signUserOut();
+  connectedAddress = null;
   updateUIForDisconnectedWallet();
 }
 
 function updateUIForConnectedWallet() {
+  // Update connect button
+  connectBtn.textContent = "Disconnect";
+  connectBtn.classList.add("connected");
+  connectBtn.onclick = disconnectWallet;
+
+  // Show wallet info
+  if (walletInfo) {
+    walletInfo.classList.remove("hidden");
+    if (walletAddress) {
+      walletAddress.textContent = `${connectedAddress.slice(0, 8)}...${connectedAddress.slice(-4)}`;
+    }
+  }
+
+  // Update play button
   if (selectedSpin) {
     playBtn.disabled = false;
     playBtnText.textContent = `Spin ${selectedSpin} - Pay 0.001 STX`;
@@ -192,6 +143,17 @@ function updateUIForConnectedWallet() {
 }
 
 function updateUIForDisconnectedWallet() {
+  // Update connect button
+  connectBtn.textContent = "Connect Wallet";
+  connectBtn.classList.remove("connected");
+  connectBtn.onclick = connectWallet;
+
+  // Hide wallet info
+  if (walletInfo) {
+    walletInfo.classList.add("hidden");
+  }
+
+  // Update play button
   playBtn.disabled = true;
   playBtnText.textContent = "Connect Wallet to Play";
 }

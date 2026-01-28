@@ -2,8 +2,11 @@
   "name": "spinning-board-game",
   "version": "1.0.0",
   "description": "A spinning board game on Stacks blockchain (Mainnet)",
-  "main": "scripts/play-game.js",
+  "type": "module",
   "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview",
     "play": "node scripts/play-game.js"
   },
   "keywords": [
@@ -16,8 +19,12 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@stacks/network": "^6.13.0",
-    "@stacks/transactions": "^6.13.0",
+    "@stacks/connect": "^8.2.4",
+    "@stacks/network": "^6.17.0",
+    "@stacks/transactions": "^6.17.0",
     "@stacks/wallet-sdk": "^7.2.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
   }
 }

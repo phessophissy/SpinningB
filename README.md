@@ -264,7 +264,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🔗 Links
 
 - **Live Game:** [spinning-board.vercel.app](https://spinning-board.vercel.app/)
-- **Contract on Explorer:** [View on Stacks Explorer](https://explorer.stacks.co/txid/SP31G2FZ5JN87BATZMP4ZRYE5F7WZQDNEXJ7G7X97.spinning-board?chain=mainnet)
+- **Contract on Explorer:** [View on Stacks Explorer](https://explorer.stacks.co/txid/SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09.spinning-board?chain=mainnet)
 - **Stacks Blockchain:** [stacks.co](https://www.stacks.co/)
 
 ---

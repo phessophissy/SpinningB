@@ -32,7 +32,7 @@ body {
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
-  background-image: 
+  background-image:
     radial-gradient(circle at 20% 50%, rgba(128, 0, 0, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.12) 0%, transparent 50%);
 }
@@ -346,7 +346,9 @@ body {
 
 /* Loading Animation */
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .loading::after {
@@ -368,16 +370,16 @@ body {
     flex-direction: column;
     gap: 16px;
   }
-  
+
   .game-stats {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .spin-grid {
     grid-template-columns: repeat(5, 1fr);
     gap: 8px;
   }
-  
+
   .spin-btn {
     font-size: 1rem;
   }
@@ -401,29 +403,61 @@ body {
 
 /* Sea Wave Animation */
 @keyframes wave {
-  0% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(-2%) translateY(2px); }
-  100% { transform: translateX(0) translateY(0); }
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-2%) translateY(2px);
+  }
+
+  100% {
+    transform: translateX(0) translateY(0);
+  }
 }
 
 @keyframes bubble {
-  0% { transform: translateY(0) scale(1); opacity: 0.6; }
-  100% { transform: translateY(-20px) scale(1.1); opacity: 0; }
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translateY(-20px) scale(1.1);
+    opacity: 0;
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 @keyframes ripple {
-  0% { box-shadow: 0 0 0 0 rgba(128, 0, 0, 0.4); }
-  100% { box-shadow: 0 0 0 20px rgba(0, 119, 190, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(128, 0, 0, 0.4);
+  }
+
+  100% {
+    box-shadow: 0 0 0 20px rgba(0, 119, 190, 0);
+  }
 }
 
 
@@ -437,7 +471,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(180deg, rgba(128,0,0,0.05) 0%, transparent 50%, rgba(212,175,55,0.05) 100%);
+  background: linear-gradient(180deg, rgba(128, 0, 0, 0.05) 0%, transparent 50%, rgba(212, 175, 55, 0.05) 100%);
   pointer-events: none;
   z-index: -1;
 }
@@ -506,6 +540,7 @@ body {
 .tx-link {
   color: #d4af37;
 }
+
 .tx-link:hover {
   color: #c9a227;
 }
@@ -513,6 +548,7 @@ body {
 .footer a {
   color: #d4af37;
 }
+
 .footer a:hover {
   color: #c9a227;
 }
@@ -525,6 +561,7 @@ body {
 .rules-card li {
   border-bottom-color: #4a1a1a;
 }
+
 .rules-card strong {
   color: #d4af37;
 }
@@ -537,7 +574,7 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  background-image: 
+  background-image:
     radial-gradient(circle at 10% 80%, rgba(32, 178, 170, 0.1) 0%, transparent 8%),
     radial-gradient(circle at 90% 20%, rgba(0, 119, 190, 0.08) 0%, transparent 6%);
   pointer-events: none;
@@ -577,13 +614,16 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #1a0505;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #4a1a1a;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #800000;
 }
@@ -601,14 +641,29 @@ button:focus {
 }
 
 @keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 5px rgba(0, 119, 190, 0.5); }
-  50% { box-shadow: 0 0 20px rgba(0, 119, 190, 0.8); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(0, 119, 190, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(0, 119, 190, 0.8);
+  }
 }
 
 @keyframes oceanWave {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 body {
@@ -619,6 +674,7 @@ body {
 .stat-card {
   transition: all 0.3s ease, box-shadow 0.3s ease;
 }
+
 .stat-card:hover {
   box-shadow: 0 5px 25px rgba(0, 119, 190, 0.3);
 }
@@ -647,6 +703,7 @@ body {
   background: rgba(13, 33, 55, 0.8);
   border-color: #4a1a1a;
 }
+
 .btn-secondary:hover {
   background: rgba(21, 53, 80, 0.9);
   border-color: #d4af37;
@@ -708,33 +765,27 @@ body {
 
 /* Maroon Stripe Pattern */
 .stripe-bg {
-  background: repeating-linear-gradient(
-    45deg,
-    #1a0505,
-    #1a0505 10px,
-    #2a0f0f 10px,
-    #2a0f0f 20px
-  );
+  background: repeating-linear-gradient(45deg,
+      #1a0505,
+      #1a0505 10px,
+      #2a0f0f 10px,
+      #2a0f0f 20px);
 }
 
 .stripe-header {
-  background: repeating-linear-gradient(
-    90deg,
-    #800000,
-    #800000 5px,
-    #5c0000 5px,
-    #5c0000 10px
-  );
+  background: repeating-linear-gradient(90deg,
+      #800000,
+      #800000 5px,
+      #5c0000 5px,
+      #5c0000 10px);
 }
 
 .stripe-accent {
-  background: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 5px,
-    rgba(212, 175, 55, 0.1) 5px,
-    rgba(212, 175, 55, 0.1) 10px
-  );
+  background: repeating-linear-gradient(-45deg,
+      transparent,
+      transparent 5px,
+      rgba(212, 175, 55, 0.1) 5px,
+      rgba(212, 175, 55, 0.1) 10px);
 }
 
 .gold-border {
@@ -754,13 +805,11 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 40px,
-    rgba(128, 0, 0, 0.03) 40px,
-    rgba(128, 0, 0, 0.03) 80px
-  );
+  background: repeating-linear-gradient(45deg,
+      transparent,
+      transparent 40px,
+      rgba(128, 0, 0, 0.03) 40px,
+      rgba(128, 0, 0, 0.03) 80px);
   pointer-events: none;
   z-index: -1;
 }
@@ -773,13 +822,11 @@ body::before {
   left: 0;
   right: 0;
   height: 4px;
-  background: repeating-linear-gradient(
-    90deg,
-    #800000,
-    #800000 8px,
-    #d4af37 8px,
-    #d4af37 16px
-  );
+  background: repeating-linear-gradient(90deg,
+      #800000,
+      #800000 8px,
+      #d4af37 8px,
+      #d4af37 16px);
 }
 
 /* Striped Footer Border */
@@ -790,13 +837,11 @@ body::before {
   left: 0;
   right: 0;
   height: 4px;
-  background: repeating-linear-gradient(
-    90deg,
-    #d4af37,
-    #d4af37 8px,
-    #800000 8px,
-    #800000 16px
-  );
+  background: repeating-linear-gradient(90deg,
+      #d4af37,
+      #d4af37 8px,
+      #800000 8px,
+      #800000 16px);
 }
 
 /* Stat Card Stripe Accent */
@@ -824,13 +869,11 @@ body::before {
   left: 0;
   right: 0;
   height: 3px;
-  background: repeating-linear-gradient(
-    90deg,
-    #800000,
-    #800000 6px,
-    #5c0000 6px,
-    #5c0000 12px
-  );
+  background: repeating-linear-gradient(90deg,
+      #800000,
+      #800000 6px,
+      #5c0000 6px,
+      #5c0000 12px);
 }
 
 .rules-card {
@@ -846,13 +889,11 @@ body::before {
   left: 0;
   right: 0;
   height: 3px;
-  background: repeating-linear-gradient(
-    90deg,
-    #d4af37,
-    #d4af37 6px,
-    #c9a227 6px,
-    #c9a227 12px
-  );
+  background: repeating-linear-gradient(90deg,
+      #d4af37,
+      #d4af37 6px,
+      #c9a227 6px,
+      #c9a227 12px);
 }
 
 .game-section {
@@ -868,13 +909,11 @@ body::before {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: repeating-linear-gradient(
-    90deg,
-    transparent,
-    transparent 10px,
-    rgba(212, 175, 55, 0.1) 10px,
-    rgba(212, 175, 55, 0.1) 20px
-  );
+  background: repeating-linear-gradient(90deg,
+      transparent,
+      transparent 10px,
+      rgba(212, 175, 55, 0.1) 10px,
+      rgba(212, 175, 55, 0.1) 20px);
   transition: left 0.5s ease;
 }
 
@@ -895,13 +934,11 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 3px,
-    rgba(212, 175, 55, 0.15) 3px,
-    rgba(212, 175, 55, 0.15) 6px
-  );
+  background: repeating-linear-gradient(45deg,
+      transparent,
+      transparent 3px,
+      rgba(212, 175, 55, 0.15) 3px,
+      rgba(212, 175, 55, 0.15) 6px);
   pointer-events: none;
 }
 
@@ -917,13 +954,11 @@ body::before {
   top: 0;
   bottom: 0;
   width: 4px;
-  background: repeating-linear-gradient(
-    180deg,
-    #800000,
-    #800000 8px,
-    #d4af37 8px,
-    #d4af37 16px
-  );
+  background: repeating-linear-gradient(180deg,
+      #800000,
+      #800000 8px,
+      #d4af37 8px,
+      #d4af37 16px);
 }
 
 .tx-history {
@@ -939,13 +974,11 @@ body::before {
   left: 0;
   right: 0;
   height: 2px;
-  background: repeating-linear-gradient(
-    90deg,
-    #d4af37,
-    #d4af37 4px,
-    transparent 4px,
-    transparent 8px
-  );
+  background: repeating-linear-gradient(90deg,
+      #d4af37,
+      #d4af37 4px,
+      transparent 4px,
+      transparent 8px);
 }
 
 .user-info {
@@ -960,13 +993,11 @@ body::before {
   left: 0;
   right: 0;
   height: 2px;
-  background: repeating-linear-gradient(
-    90deg,
-    currentColor,
-    currentColor 4px,
-    transparent 4px,
-    transparent 8px
-  );
+  background: repeating-linear-gradient(90deg,
+      currentColor,
+      currentColor 4px,
+      transparent 4px,
+      transparent 8px);
   opacity: 0.5;
 }
 
@@ -976,8 +1007,13 @@ body::before {
 
 /* Animated Stripe Background */
 @keyframes stripeMove {
-  0% { background-position: 0 0; }
-  100% { background-position: 40px 40px; }
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 40px 40px;
+  }
 }
 
 /* Apply moving stripes to body */
@@ -988,13 +1024,11 @@ body::after {
   left: 0;
   right: 0;
   bottom: 0;
-  background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 20px,
-    rgba(128, 0, 0, 0.02) 20px,
-    rgba(128, 0, 0, 0.02) 40px
-  );
+  background: repeating-linear-gradient(45deg,
+      transparent,
+      transparent 20px,
+      rgba(128, 0, 0, 0.02) 20px,
+      rgba(128, 0, 0, 0.02) 40px);
   animation: stripeMove 20s linear infinite;
   pointer-events: none;
   z-index: -1;
@@ -1006,24 +1040,20 @@ body::after {
   display: block;
   height: 2px;
   margin-top: 4px;
-  background: repeating-linear-gradient(
-    90deg,
-    #800000,
-    #800000 4px,
-    #d4af37 4px,
-    #d4af37 8px
-  );
+  background: repeating-linear-gradient(90deg,
+      #800000,
+      #800000 4px,
+      #d4af37 4px,
+      #d4af37 8px);
 }
 
 /* Spin Grid Stripe Background */
 .spin-grid {
-  background: repeating-linear-gradient(
-    135deg,
-    transparent,
-    transparent 20px,
-    rgba(128, 0, 0, 0.05) 20px,
-    rgba(128, 0, 0, 0.05) 40px
-  );
+  background: repeating-linear-gradient(135deg,
+      transparent,
+      transparent 20px,
+      rgba(128, 0, 0, 0.05) 20px,
+      rgba(128, 0, 0, 0.05) 40px);
   padding: 16px;
   border-radius: 12px;
 }
@@ -1053,13 +1083,11 @@ body::after {
 .container {
   border-left: 3px solid transparent;
   border-right: 3px solid transparent;
-  border-image: repeating-linear-gradient(
-    180deg,
-    #800000,
-    #800000 10px,
-    #d4af37 10px,
-    #d4af37 20px
-  ) 1;
+  border-image: repeating-linear-gradient(180deg,
+      #800000,
+      #800000 10px,
+      #d4af37 10px,
+      #d4af37 20px) 1;
 }
 
 /* Stat Label Stripe Accent */
@@ -1092,14 +1120,12 @@ body::after {
 
 /* Primary Button Stripe Gradient */
 .btn-primary {
-  background: linear-gradient(
-    135deg,
-    #800000 0%,
-    #a52a2a 25%,
-    #800000 50%,
-    #a52a2a 75%,
-    #800000 100%
-  );
+  background: linear-gradient(135deg,
+      #800000 0%,
+      #a52a2a 25%,
+      #800000 50%,
+      #a52a2a 75%,
+      #800000 100%);
   background-size: 200% 200%;
 }
 
@@ -1110,15 +1136,13 @@ body::after {
 /* Secondary Button Stripe Border */
 .btn-secondary {
   border: 2px solid transparent;
-  background: 
+  background:
     linear-gradient(#2a0f0f, #2a0f0f) padding-box,
-    repeating-linear-gradient(
-      90deg,
+    repeating-linear-gradient(90deg,
       #800000,
       #800000 4px,
       #d4af37 4px,
-      #d4af37 8px
-    ) border-box;
+      #d4af37 8px) border-box;
 }
 
 /* Footer Links Stripe Underline */
@@ -1133,13 +1157,11 @@ body::after {
   left: 0;
   width: 0;
   height: 2px;
-  background: repeating-linear-gradient(
-    90deg,
-    #800000,
-    #800000 2px,
-    #d4af37 2px,
-    #d4af37 4px
-  );
+  background: repeating-linear-gradient(90deg,
+      #800000,
+      #800000 2px,
+      #d4af37 2px,
+      #d4af37 4px);
   transition: width 0.3s ease;
 }
 
@@ -1160,17 +1182,20 @@ body::after {
 
 /* Spin Button Hover Stripe Glow */
 .spin-btn:hover {
-  box-shadow: 
+  box-shadow:
     0 0 10px rgba(128, 0, 0, 0.5),
     0 0 20px rgba(212, 175, 55, 0.3);
 }
 
 /* Enhanced Stripe Pulse Animation */
 @keyframes stripePulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.8;
     transform: scale(1);
   }
+
   50% {
     opacity: 1;
     transform: scale(1.02);
@@ -1194,13 +1219,11 @@ body::after {
 
 /* Loading Button Stripe Background */
 .btn.loading {
-  background: repeating-linear-gradient(
-    -45deg,
-    #800000,
-    #800000 10px,
-    #5c0000 10px,
-    #5c0000 20px
-  );
+  background: repeating-linear-gradient(-45deg,
+      #800000,
+      #800000 10px,
+      #5c0000 10px,
+      #5c0000 20px);
   background-size: 200% 200%;
   animation: stripeMove 1s linear infinite;
 }
@@ -1213,12 +1236,10 @@ body::after {
   right: 0;
   width: 40px;
   height: 40px;
-  background: linear-gradient(
-    135deg,
-    #d4af37 0%,
-    #d4af37 50%,
-    transparent 50%
-  );
+  background: linear-gradient(135deg,
+      #d4af37 0%,
+      #d4af37 50%,
+      transparent 50%);
   opacity: 0.3;
 }
 
@@ -1230,12 +1251,10 @@ body::after {
   left: 0;
   width: 30px;
   height: 30px;
-  background: linear-gradient(
-    -45deg,
-    #800000 0%,
-    #800000 50%,
-    transparent 50%
-  );
+  background: linear-gradient(-45deg,
+      #800000 0%,
+      #800000 50%,
+      transparent 50%);
   opacity: 0.4;
 }
 
@@ -1246,14 +1265,12 @@ body::after {
   grid-column: 1 / -1;
   height: 2px;
   margin-top: 8px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #800000 20%,
-    #d4af37 50%,
-    #800000 80%,
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      #800000 20%,
+      #d4af37 50%,
+      #800000 80%,
+      transparent);
 }
 
 /* Hover Stripe Reveal Effect */
@@ -1264,13 +1281,11 @@ body::after {
   left: 0;
   right: 0;
   bottom: 0;
-  background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 10px,
-    rgba(212, 175, 55, 0.05) 10px,
-    rgba(212, 175, 55, 0.05) 20px
-  );
+  background: repeating-linear-gradient(45deg,
+      transparent,
+      transparent 10px,
+      rgba(212, 175, 55, 0.05) 10px,
+      rgba(212, 175, 55, 0.05) 20px);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -1282,7 +1297,7 @@ body::after {
 /* Enhanced Focus Ring Stripe */
 .spin-btn:focus {
   outline: none;
-  box-shadow: 
+  box-shadow:
     0 0 0 3px #1a0505,
     0 0 0 5px #d4af37;
 }
@@ -1290,7 +1305,7 @@ body::after {
 /* Play Button Focus State */
 .btn-play:focus {
   outline: none;
-  box-shadow: 
+  box-shadow:
     0 0 0 3px #1a0505,
     0 0 0 6px #800000,
     0 10px 40px rgba(128, 0, 0, 0.4);
@@ -1298,7 +1313,7 @@ body::after {
 
 /* Stripe Shadow Effect */
 .game-section {
-  box-shadow: 
+  box-shadow:
     0 4px 6px rgba(0, 0, 0, 0.3),
     0 0 40px rgba(128, 0, 0, 0.15),
     inset 0 1px 0 rgba(212, 175, 55, 0.1);
@@ -1306,7 +1321,7 @@ body::after {
 
 /* Rules Card Shadow */
 .rules-card {
-  box-shadow: 
+  box-shadow:
     0 4px 6px rgba(0, 0, 0, 0.3),
     0 0 30px rgba(128, 0, 0, 0.1),
     inset 0 1px 0 rgba(212, 175, 55, 0.08);
@@ -1324,13 +1339,11 @@ body::after {
 
 /* Maroon Stripe Disabled State */
 .btn-play:disabled {
-  background: repeating-linear-gradient(
-    45deg,
-    #3d1515,
-    #3d1515 10px,
-    #2a0f0f 10px,
-    #2a0f0f 20px
-  );
+  background: repeating-linear-gradient(45deg,
+      #3d1515,
+      #3d1515 10px,
+      #2a0f0f 10px,
+      #2a0f0f 20px);
   color: #666;
 }
 
@@ -1351,7 +1364,7 @@ body::after {
 .rules-card,
 .game-section,
 .tx-history {
-  transition: 
+  transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
     border-color 0.3s ease;
@@ -1361,7 +1374,7 @@ body::after {
 .rules-card:hover,
 .game-section:hover {
   transform: translateY(-4px);
-  box-shadow: 
+  box-shadow:
     0 8px 16px rgba(0, 0, 0, 0.4),
     0 0 50px rgba(128, 0, 0, 0.2);
 }
@@ -1385,8 +1398,13 @@ body::after {
 
 /* Stripe Border Animation */
 @keyframes borderStripe {
-  0% { background-position: 0 0; }
-  100% { background-position: 20px 0; }
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 20px 0;
+  }
 }
 
 /* User Info Hover Border Animation */
@@ -1396,20 +1414,16 @@ body::after {
 
 /* Maroon Gradient Radial Background */
 .container {
-  background: radial-gradient(
-    ellipse at 50% 0%,
-    rgba(128, 0, 0, 0.1) 0%,
-    transparent 50%
-  );
+  background: radial-gradient(ellipse at 50% 0%,
+      rgba(128, 0, 0, 0.1) 0%,
+      transparent 50%);
 }
 
 /* Bottom Gold Glow */
 .container::after {
-  background: radial-gradient(
-    ellipse at 50% 100%,
-    rgba(212, 175, 55, 0.08) 0%,
-    transparent 40%
-  );
+  background: radial-gradient(ellipse at 50% 100%,
+      rgba(212, 175, 55, 0.08) 0%,
+      transparent 40%);
 }
 
 /* Enhanced Link Colors */
@@ -1425,70 +1439,63 @@ a:hover {
 
 /* Stripe Pattern Utility Classes */
 .maroon-stripe-diagonal {
-  background: repeating-linear-gradient(
-    45deg,
-    #800000,
-    #800000 5px,
-    #5c0000 5px,
-    #5c0000 10px
-  );
+  background: repeating-linear-gradient(45deg,
+      #800000,
+      #800000 5px,
+      #5c0000 5px,
+      #5c0000 10px);
 }
 
 .gold-stripe-horizontal {
-  background: repeating-linear-gradient(
-    90deg,
-    #d4af37,
-    #d4af37 5px,
-    #c9a227 5px,
-    #c9a227 10px
-  );
+  background: repeating-linear-gradient(90deg,
+      #d4af37,
+      #d4af37 5px,
+      #c9a227 5px,
+      #c9a227 10px);
 }
 
 .maroon-gold-mixed {
-  background: repeating-linear-gradient(
-    45deg,
-    #800000,
-    #800000 10px,
-    #d4af37 10px,
-    #d4af37 12px,
-    #5c0000 12px,
-    #5c0000 22px
-  );
+  background: repeating-linear-gradient(45deg,
+      #800000,
+      #800000 10px,
+      #d4af37 10px,
+      #d4af37 12px,
+      #5c0000 12px,
+      #5c0000 22px);
 }
 
 /* Thin Stripe Separator */
 .stripe-separator {
   height: 3px;
-  background: repeating-linear-gradient(
-    90deg,
-    #800000,
-    #800000 4px,
-    #d4af37 4px,
-    #d4af37 8px
-  );
+  background: repeating-linear-gradient(90deg,
+      #800000,
+      #800000 4px,
+      #d4af37 4px,
+      #d4af37 8px);
   margin: 20px 0;
 }
 
 /* Stripe Box Utility */
 .stripe-box {
   border: 3px solid transparent;
-  background: 
+  background:
     linear-gradient(#2a0f0f, #2a0f0f) padding-box,
-    repeating-linear-gradient(
-      45deg,
+    repeating-linear-gradient(45deg,
       #800000,
       #800000 5px,
       #d4af37 5px,
-      #d4af37 10px
-    ) border-box;
+      #d4af37 10px) border-box;
   border-radius: 12px;
 }
 
 /* Animated Glow Border */
 @keyframes glowBorder {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 5px rgba(128, 0, 0, 0.5);
   }
+
   50% {
     box-shadow: 0 0 20px rgba(128, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.4);
   }
@@ -1501,11 +1508,12 @@ a:hover {
 
 /* Responsive Stripe Adjustments */
 @media (max-width: 480px) {
+
   .header::before,
   .footer::before {
     height: 3px;
   }
-  
+
   .stat-card::before {
     width: 3px;
   }
@@ -1513,6 +1521,7 @@ a:hover {
 
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -1529,7 +1538,7 @@ a:hover {
     --accent: #ffd700;
     --border: #800000;
   }
-  
+
   .spin-btn {
     border-width: 3px;
   }
@@ -1541,7 +1550,7 @@ a:hover {
     background: white;
     color: black;
   }
-  
+
   .btn-play,
   .spin-btn {
     border: 2px solid #800000;
@@ -1554,7 +1563,7 @@ a:hover {
   .container {
     padding: 10px;
   }
-  
+
   .game-stats {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -1566,11 +1575,11 @@ a:hover {
     max-width: 700px;
     padding: 30px;
   }
-  
+
   .spin-grid {
     gap: 16px;
   }
-  
+
   .spin-btn {
     font-size: 1.5rem;
   }
@@ -1581,11 +1590,11 @@ a:hover {
   .container {
     max-width: 800px;
   }
-  
+
   .game-section {
     padding: 32px;
   }
-  
+
   .btn-play {
     padding: 20px;
     font-size: 1.25rem;
@@ -1607,7 +1616,7 @@ a:hover {
     min-height: 60px;
     min-width: 60px;
   }
-  
+
   .btn-play {
     min-height: 56px;
   }
@@ -1618,7 +1627,7 @@ a:hover {
   .spin-btn:hover {
     transform: scale(1.08);
   }
-  
+
   .stat-card:hover {
     transform: translateY(-4px);
   }
@@ -1650,4 +1659,51 @@ html {
 .spin-btn,
 a {
   -webkit-tap-highlight-color: transparent;
+}
+
+/* ============================================
+   Wallet Connection Styles
+   ============================================ */
+
+.wallet-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wallet-info {
+  background: rgba(128, 0, 0, 0.2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px 16px;
+}
+
+.wallet-address {
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: var(--accent);
+}
+
+.btn-connect {
+  background: linear-gradient(135deg, #800000, #a52a2a);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-connect:hover {
+  background: linear-gradient(135deg, #a52a2a, #800000);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(128, 0, 0, 0.4);
+}
+
+.btn-connect.connected {
+  background: linear-gradient(135deg, #2a0f0f, #3d1515);
+  border: 1px solid var(--accent);
+}
+
+.btn-connect.connected:hover {
+  background: linear-gradient(135deg, #5c0000, #800000);
 }
