@@ -236,8 +236,9 @@ const CONTRACT_NAME = "spinning-board";
 ## 🔧 Tech Stack
 
 - **Smart Contract:** [Clarity](https://docs.stacks.co/clarity) (Stacks)
-- **Wallet Connection:** [REOWN AppKit](https://reown.com/) + [Stacks Connect](https://connect.stacks.js.org/)
+- **Wallet Connection:** [@stacks/connect](https://github.com/hirosystems/stacks.js) + [@stacks/transactions](https://github.com/hirosystems/stacks.js)
 - **Frontend:** Vanilla JS, HTML, CSS
+- **Bundler:** [Vite](https://vitejs.dev/)
 - **Network:** [Stacks](https://www.stacks.co/) Mainnet (Bitcoin L2)
 - **Hosting:** [Vercel](https://vercel.com/)
 
