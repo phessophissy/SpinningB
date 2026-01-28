@@ -23,9 +23,9 @@ A decentralized spinning board game on the Stacks blockchain (Bitcoin L2).
 
 - 🔐 Decentralized & trustless gameplay
 - 💰 Automatic prize distribution via smart contract
-- 🌊 Beautiful ocean-themed UI
+- 🔩 Sleek metallic chrome-themed UI
 - 📱 Mobile responsive design
-- 🔗 REOWN AppKit wallet integration
+- 🔗 Native Stacks Connect wallet integration
 - ⚡ Built on Stacks (Bitcoin L2)
 
 ## 📁 Project Structure
