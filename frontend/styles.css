@@ -1735,9 +1735,9 @@ a:hover {
 /* Dark mode explicit support */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #1a0505;
-    --bg-card: #2a0f0f;
-    --text: #fff5e6;
+    --bg: #0d0d1a;
+    --bg-card: #1a1a2e;
+    --text: #e8e8e8;
   }
 }
 
