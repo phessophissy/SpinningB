@@ -410,18 +410,32 @@ body {
 .footer {
   text-align: center;
   padding: 24px 0;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent 0%, rgba(192, 192, 192, 0.3) 50%, transparent 100%) 1;
   color: var(--text-muted);
   font-size: 0.875rem;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(112, 128, 144, 0.2), transparent);
 }
 
 .footer a {
-  color: var(--primary);
+  color: var(--chrome-light);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .footer a:hover {
-  text-decoration: underline;
+  color: var(--accent-gold);
+  text-decoration: none;
 }
 
 .footer p {
