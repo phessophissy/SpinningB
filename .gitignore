@@ -24,3 +24,9 @@ npm-debug.log*
 
 # Vercel
 .vercel
+
+# Clarinet
+.clarinet/
+deployments/
+settings/
+!settings/Devnet.toml
