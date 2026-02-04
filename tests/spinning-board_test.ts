@@ -32,3 +32,19 @@ Clarinet.test({
     },
 });
 
+Clarinet.test({
+    name: "Ensure that player cannot play twice in the same round",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const wallet1 = accounts.get('wallet_1')!;
+
+        let block = chain.mineBlock([
+            Tx.contractCall('spinning-board', 'play', [types.uint(5)], wallet1.address),
+            Tx.contractCall('spinning-board', 'play', [types.uint(6)], wallet1.address)
+        ]);
+
+        block.receipts[0].result.expectOk();
+        block.receipts[1].result.expectErr(types.uint(103)); // ERR_ALREADY_PLAYED
+    },
+});
+
+
