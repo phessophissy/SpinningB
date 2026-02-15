@@ -10,3 +10,4 @@ This folder contains operational runbooks for Release Management workflows in Sp
 - [Release Candidate Checklist](./05-release-candidate-checklist.md)
 - [Canary Verification](./06-canary-verification.md)
 - [Post Release Monitoring](./07-post-release-monitoring.md)
+- [Rollback Decision Tree](./08-rollback-decision-tree.md)
