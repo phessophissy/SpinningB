@@ -9,3 +9,4 @@ This folder contains operational runbooks for Observability workflows in Spinnin
 - [Tx Success Tracking](./04-tx-success-tracking.md)
 - [Round Completion Tracking](./05-round-completion-tracking.md)
 - [Error Code Monitoring](./06-error-code-monitoring.md)
+- [User Support Feedback Loop](./07-user-support-feedback-loop.md)
