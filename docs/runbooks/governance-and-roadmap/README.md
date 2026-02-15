@@ -9,3 +9,4 @@ This folder contains operational runbooks for Governance And Roadmap workflows i
 - [Risk Register](./04-risk-register.md)
 - [Decision Log](./05-decision-log.md)
 - [Stakeholder Update Template](./06-stakeholder-update-template.md)
+- [Milestone Definition](./07-milestone-definition.md)
