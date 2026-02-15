@@ -12,3 +12,4 @@ This folder contains operational runbooks for Contract Testing workflows in Spin
 - [Contract Console Debug](./07-contract-console-debug.md)
 - [Gas Cost Review](./08-gas-cost-review.md)
 - [Test Fixture Patterns](./09-test-fixture-patterns.md)
+- [Pre Merge Test Gate](./10-pre-merge-test-gate.md)
