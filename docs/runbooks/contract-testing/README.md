@@ -11,3 +11,4 @@ This folder contains operational runbooks for Contract Testing workflows in Spin
 - [Regression Test Checklist](./06-regression-test-checklist.md)
 - [Contract Console Debug](./07-contract-console-debug.md)
 - [Gas Cost Review](./08-gas-cost-review.md)
+- [Test Fixture Patterns](./09-test-fixture-patterns.md)
