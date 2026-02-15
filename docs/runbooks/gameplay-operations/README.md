@@ -12,3 +12,4 @@ This folder contains operational runbooks for Gameplay Operations workflows in S
 - [Round Reset Verification](./07-round-reset-verification.md)
 - [Explorer Verification](./08-explorer-verification.md)
 - [Support Triage](./09-support-triage.md)
+- [Gameplay Smoke Test](./10-gameplay-smoke-test.md)
