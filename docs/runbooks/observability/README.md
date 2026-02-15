@@ -11,3 +11,4 @@ This folder contains operational runbooks for Observability workflows in Spinnin
 - [Error Code Monitoring](./06-error-code-monitoring.md)
 - [User Support Feedback Loop](./07-user-support-feedback-loop.md)
 - [Dashboard Spec](./08-dashboard-spec.md)
+- [Weekly Health Review](./09-weekly-health-review.md)
