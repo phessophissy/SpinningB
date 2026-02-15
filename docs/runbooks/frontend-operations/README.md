@@ -9,3 +9,4 @@ This folder contains operational runbooks for Frontend Operations workflows in S
 - [Transaction Submit Debug](./04-transaction-submit-debug.md)
 - [Status Message Guidelines](./05-status-message-guidelines.md)
 - [Mobile Qa Script](./06-mobile-qa-script.md)
+- [Browser Compatibility Check](./07-browser-compatibility-check.md)
