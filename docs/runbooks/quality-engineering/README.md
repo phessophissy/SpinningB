@@ -11,3 +11,4 @@ This folder contains operational runbooks for Quality Engineering workflows in S
 - [Contract Frontend Integration](./06-contract-frontend-integration.md)
 - [Performance Baseline](./07-performance-baseline.md)
 - [Non Functional Tests](./08-non-functional-tests.md)
+- [Release Quality Gate](./09-release-quality-gate.md)
