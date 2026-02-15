@@ -9,3 +9,4 @@ This folder contains operational runbooks for Ci Cd workflows in SpinningB.
 - [Dependency Update Flow](./04-dependency-update-flow.md)
 - [Release Tag Process](./05-release-tag-process.md)
 - [Rollback Process](./06-rollback-process.md)
+- [Hotfix Pr Process](./07-hotfix-pr-process.md)
