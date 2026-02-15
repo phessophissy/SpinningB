@@ -10,3 +10,4 @@ This folder contains operational runbooks for Ci Cd workflows in SpinningB.
 - [Release Tag Process](./05-release-tag-process.md)
 - [Rollback Process](./06-rollback-process.md)
 - [Hotfix Pr Process](./07-hotfix-pr-process.md)
+- [Workflow Failure Triage](./08-workflow-failure-triage.md)
