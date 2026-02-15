@@ -9,3 +9,4 @@ This folder contains operational runbooks for Gameplay Operations workflows in S
 - [High Spin Tracking](./04-high-spin-tracking.md)
 - [Tie Splitting](./05-tie-splitting.md)
 - [Payout Audit](./06-payout-audit.md)
+- [Round Reset Verification](./07-round-reset-verification.md)
