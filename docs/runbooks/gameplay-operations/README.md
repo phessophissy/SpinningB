@@ -10,3 +10,4 @@ This folder contains operational runbooks for Gameplay Operations workflows in S
 - [Tie Splitting](./05-tie-splitting.md)
 - [Payout Audit](./06-payout-audit.md)
 - [Round Reset Verification](./07-round-reset-verification.md)
+- [Explorer Verification](./08-explorer-verification.md)
