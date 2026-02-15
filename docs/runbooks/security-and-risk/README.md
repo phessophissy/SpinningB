@@ -8,3 +8,4 @@ This folder contains operational runbooks for Security And Risk workflows in Spi
 - [Input Validation Audit](./03-input-validation-audit.md)
 - [Payout Risk Review](./04-payout-risk-review.md)
 - [Dependency Security Review](./05-dependency-security-review.md)
+- [Secret Handling Policy](./06-secret-handling-policy.md)
