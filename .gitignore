@@ -32,3 +32,8 @@ npm-debug.log*
 deployments/
 settings/
 !settings/Devnet.toml
+
+# Script-related files/folders
+script/
+scripts/
+*script*
