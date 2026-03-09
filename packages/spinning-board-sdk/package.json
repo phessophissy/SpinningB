@@ -1,0 +1,22 @@
+{
+  "name": "spinning-board-sdk",
+  "version": "1.0.0",
+  "description": "SDK for interacting with the Spinning Board game on Stacks",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "stacks",
+    "blockchain",
+    "clarity",
+    "spinning-board"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@stacks/network": "^6.17.0",
+    "@stacks/transactions": "^6.17.0"
+  }
+}
