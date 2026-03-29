@@ -206,6 +206,7 @@ async function loadGameStats({ reason = 'auto', withStatus = false } = {}) {
 
   state.isRefreshing = true;
   refreshStatsBtn.disabled = true;
+  refreshStatsBtn.classList.add('loading');
   refreshStatsBtn.textContent = reason === 'manual' ? 'Refreshing...' : 'Refresh stats';
 
   try {
@@ -242,6 +243,7 @@ async function loadGameStats({ reason = 'auto', withStatus = false } = {}) {
   } finally {
     state.isRefreshing = false;
     refreshStatsBtn.disabled = false;
+    refreshStatsBtn.classList.remove('loading');
     refreshStatsBtn.textContent = 'Refresh stats';
   }
 }
