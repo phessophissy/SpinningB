@@ -75,6 +75,7 @@ function initializeApp() {
   spinButtons.forEach((btn) => {
     btn.addEventListener('click', () => selectSpin(btn));
   });
+  window.addEventListener('keydown', handleSpinShortcut);
 
   if (userSession.isUserSignedIn()) {
     const userData = userSession.loadUserData();
@@ -291,6 +292,38 @@ function selectSpin(btn) {
   state.selectedSpin = Number.parseInt(btn.dataset.spin, 10);
   syncSelectionUI();
   addActivity(`Prepared spin ${state.selectedSpin}.`);
+}
+
+function handleSpinShortcut(event) {
+  const shortcutMap = {
+    1: 1,
+    2: 2,
+    3: 3,
+    4: 4,
+    5: 5,
+    6: 6,
+    7: 7,
+    8: 8,
+    9: 9,
+    0: 10,
+  };
+
+  if (
+    event.metaKey ||
+    event.ctrlKey ||
+    event.altKey ||
+    ['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)
+  ) {
+    return;
+  }
+
+  const spin = shortcutMap[event.key];
+  if (!spin) return;
+
+  const targetButton = spinButtons.find((btn) => Number(btn.dataset.spin) === spin);
+  if (targetButton) {
+    selectSpin(targetButton);
+  }
 }
 
 async function checkIfAlreadyPlayed() {
