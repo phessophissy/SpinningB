@@ -461,6 +461,17 @@ select {
   margin-bottom: 18px;
 }
 
+.shortcut-note {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.shortcut-note strong {
+  color: var(--muted-strong);
+}
+
 .selection-summary > div,
 .intel-block {
   padding: 14px 16px;
