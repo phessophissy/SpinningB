@@ -28,6 +28,14 @@ A decentralized spinning board game on the Stacks blockchain (Bitcoin L2).
 - 🔗 Native Stacks Connect wallet integration
 - ⚡ Built on Stacks (Bitcoin L2)
 
+## 📦 SDK
+
+The JavaScript SDK now lives in its own repository:
+
+- https://github.com/phessophissy/SpinningB-sdk
+
+That keeps the app and SDK versioned independently. The main app repo no longer carries the SDK source under `packages/`.
+
 ## 📁 Project Structure
 
 ```
