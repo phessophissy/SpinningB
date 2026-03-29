@@ -1,106 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="talentapp:project_verification" content="552af19749efb5c03f3fdcf4b623453cc320612cff5ed064641bf10b9f0615346264481a36313d9ddf07845648ca79be3e0323f2230c8dbe2782009a01900da0">
-  <title>SpinningB | Maroon Stripe Edition</title>
+  <meta
+    name="talentapp:project_verification"
+    content="552af19749efb5c03f3fdcf4b623453cc320612cff5ed064641bf10b9f0615346264481a36313d9ddf07845648ca79be3e0323f2230c8dbe2782009a01900da0"
+  >
+  <meta
+    name="description"
+    content="SpinningB is a live Stacks mainnet game where players choose a spin from 1 to 10 and compete for the round pot."
+  >
+  <title>SpinningB | Signal Room</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <div class="container">
-    <!-- Header -->
-    <header class="header">
-      <div class="logo">
-        <span class="logo-icon">🎲</span>
-        <h1>SpinningB</h1>
+  <div class="page-shell">
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <div class="ambient ambient-grid"></div>
+
+    <header class="topbar">
+      <div class="brand-lockup">
+        <span class="brand-mark">SB</span>
+        <div>
+          <p class="eyebrow">Stacks Mainnet Game</p>
+          <h1>SpinningB Signal Room</h1>
+        </div>
       </div>
-      <!-- Wallet Connection -->
+
       <div class="wallet-section">
         <div id="walletInfo" class="wallet-info hidden">
+          <span id="walletStatusPill" class="wallet-pill">Wallet idle</span>
           <span id="walletAddress" class="wallet-address"></span>
         </div>
         <button id="connectBtn" class="btn btn-connect">Connect Wallet</button>
       </div>
     </header>
 
-    <!-- Game Stats -->
-    <section class="game-stats">
-      <div class="stat-card">
-        <span class="stat-label"> Round</span>
-        <span id="currentRound" class="stat-value">-</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-label"> Players</span>
-        <span id="playerCount" class="stat-value">-/10</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-label"> Pot</span>
-        <span id="totalPot" class="stat-value">- STX</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-label"> High Spin</span>
-        <span id="highestSpin" class="stat-value">-</span>
-      </div>
-    </section>
+    <main class="dashboard">
+      <section class="hero-card panel">
+        <div class="hero-copy">
+          <p class="eyebrow">Round Intelligence</p>
+          <h2>Pick your number. Land the highest spin. Exit with the pot.</h2>
+          <p class="hero-text">
+            Every round accepts up to ten players. Each entry costs 0.001 STX,
+            the highest spin wins, and ties split the prize.
+          </p>
 
-    <!-- Game Rules -->
-    <section class="rules-card">
-      <h2>🎲 How to Play</h2>
-      <ul>
-        <li><strong> Entry Fee:</strong> 0.001 STX per spin</li>
-        <li><strong> Pick a number:</strong> 1 to 10</li>
-        <li><strong> Win condition:</strong> Highest spin wins!</li>
-        <li><strong> Prize:</strong> 50% of pot to winner(s)</li>
-        <li><strong> Ties:</strong> Winners split the prize equally</li>
-        <li><strong> Round ends:</strong> After 10 players join</li>
-      </ul>
-    </section>
+          <div class="hero-actions">
+            <a
+              class="inline-link"
+              href="https://explorer.stacks.co/txid/SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09.spinning-board?chain=mainnet"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View contract
+            </a>
+            <button id="refreshStatsBtn" class="btn btn-ghost" type="button">Refresh stats</button>
+          </div>
+        </div>
 
-    <!-- Spin Selection -->
-    <section id="gameSection" class="game-section">
-      <h2>🎯 Spin to Win</h2>
-      <div class="spin-grid">
-        <button class="spin-btn" data-spin="1">1</button>
-        <button class="spin-btn" data-spin="2">2</button>
-        <button class="spin-btn" data-spin="3">3</button>
-        <button class="spin-btn" data-spin="4">4</button>
-        <button class="spin-btn" data-spin="5">5</button>
-        <button class="spin-btn" data-spin="6">6</button>
-        <button class="spin-btn" data-spin="7">7</button>
-        <button class="spin-btn" data-spin="8">8</button>
-        <button class="spin-btn" data-spin="9">9</button>
-        <button class="spin-btn" data-spin="10">10</button>
-      </div>
-      <button id="playBtn" class="btn btn-play" disabled>
-        <span id="playBtnText">Connect Wallet to Play</span>
-      </button>
-      <p class="fee-note">Entry fee: 0.001 STX + ~0.002 STX tx fee</p>
-    </section>
+        <div class="hero-side">
+          <div class="signal-card">
+            <p class="signal-label">Readiness</p>
+            <ul class="signal-list">
+              <li><span class="signal-dot"></span> Connect a Stacks wallet</li>
+              <li><span class="signal-dot"></span> Choose a spin from 1 to 10</li>
+              <li><span class="signal-dot"></span> Submit one entry per round</li>
+            </ul>
+          </div>
 
-    <!-- Status Messages -->
-    <div id="statusMessage" class="status-message hidden"></div>
+          <div class="signal-card emphasis">
+            <p class="signal-label">Selection</p>
+            <p id="selectedSpinValue" class="selection-value">No spin selected</p>
+            <p id="selectionHint" class="selection-hint">
+              Choose a number to prepare your transaction.
+            </p>
+          </div>
+        </div>
+      </section>
 
-    <!-- Transaction History -->
-    <section id="txHistory" class="tx-history hidden">
-      <h3> Recent Transaction</h3>
-      <a id="txLink" href="#" target="_blank" class="tx-link"></a>
-    </section>
+      <section class="stats-band" aria-label="Live game statistics">
+        <article class="stat-card">
+          <span class="stat-label">Current round</span>
+          <span id="currentRound" class="stat-value">-</span>
+          <span class="stat-foot">Mainnet live</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Seats filled</span>
+          <span id="playerCount" class="stat-value">-/10</span>
+          <span id="roundCapacity" class="stat-foot">Waiting for sync</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Round pot</span>
+          <span id="totalPot" class="stat-value">- STX</span>
+          <span id="potSignal" class="stat-foot">Awaiting chain data</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">High spin</span>
+          <span id="highestSpin" class="stat-value">-</span>
+          <span class="stat-foot">Best number so far</span>
+        </article>
+      </section>
 
-    <!-- Footer -->
+      <section class="content-grid">
+        <section class="panel rules-card">
+          <div class="panel-head">
+            <p class="eyebrow">Round Rules</p>
+            <h3>Fast, simple, brutal.</h3>
+          </div>
+          <ul class="rule-list">
+            <li><strong>Entry fee</strong><span>0.001 STX per play</span></li>
+            <li><strong>Spin range</strong><span>Select any integer from 1 to 10</span></li>
+            <li><strong>Round cap</strong><span>Round closes after 10 total players</span></li>
+            <li><strong>Winner logic</strong><span>Highest spin wins the payout</span></li>
+            <li><strong>Tie behavior</strong><span>Equal winners split the prize evenly</span></li>
+            <li><strong>Wallet limit</strong><span>One move per wallet each round</span></li>
+          </ul>
+        </section>
+
+        <section id="gameSection" class="panel command-card">
+          <div class="panel-head">
+            <p class="eyebrow">Play Console</p>
+            <h3>Lock your number</h3>
+          </div>
+
+          <div class="spin-grid" role="group" aria-label="Choose your spin">
+            <button class="spin-btn" data-spin="1" type="button">1</button>
+            <button class="spin-btn" data-spin="2" type="button">2</button>
+            <button class="spin-btn" data-spin="3" type="button">3</button>
+            <button class="spin-btn" data-spin="4" type="button">4</button>
+            <button class="spin-btn" data-spin="5" type="button">5</button>
+            <button class="spin-btn" data-spin="6" type="button">6</button>
+            <button class="spin-btn" data-spin="7" type="button">7</button>
+            <button class="spin-btn" data-spin="8" type="button">8</button>
+            <button class="spin-btn" data-spin="9" type="button">9</button>
+            <button class="spin-btn" data-spin="10" type="button">10</button>
+          </div>
+
+          <div class="selection-summary">
+            <div>
+              <span class="summary-label">Prepared move</span>
+              <strong id="selectionSummary">No spin prepared</strong>
+            </div>
+            <div>
+              <span class="summary-label">Estimated cost</span>
+              <strong>0.001 STX + network fee</strong>
+            </div>
+          </div>
+
+          <button id="playBtn" class="btn btn-play" disabled>
+            <span id="playBtnText">Connect Wallet to Play</span>
+          </button>
+
+          <p class="fee-note">Typical transaction fee is about 0.002 STX, depending on network conditions.</p>
+        </section>
+
+        <aside class="panel intel-card">
+          <div class="panel-head">
+            <p class="eyebrow">Round Feed</p>
+            <h3>What your session knows</h3>
+          </div>
+
+          <div class="intel-stack">
+            <div class="intel-block">
+              <span class="summary-label">Connection state</span>
+              <strong id="connectionState">Wallet not connected</strong>
+            </div>
+            <div class="intel-block">
+              <span class="summary-label">Last chain refresh</span>
+              <strong id="lastUpdated">Not refreshed yet</strong>
+            </div>
+          </div>
+
+          <div id="statusMessage" class="status-message hidden" aria-live="polite"></div>
+
+          <section id="txHistory" class="tx-history hidden">
+            <h4>Latest transaction</h4>
+            <a id="txLink" href="#" target="_blank" rel="noreferrer" class="tx-link"></a>
+          </section>
+
+          <section class="activity-card" aria-label="Session activity">
+            <div class="activity-head">
+              <h4>Session activity</h4>
+              <span class="summary-label">Local browser history</span>
+            </div>
+            <ul id="activityList" class="activity-list">
+              <li class="activity-empty">No local activity yet. Connect a wallet or refresh stats.</li>
+            </ul>
+          </section>
+        </aside>
+      </section>
+    </main>
+
     <footer class="footer">
-      <p>Contract: <a
+      <p>
+        Contract:
+        <a
           href="https://explorer.stacks.co/txid/SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09.spinning-board?chain=mainnet"
-          target="_blank">SP2KYZRN...E09.spinning-board</a></p>
-      <p>Built on <a href="https://www.stacks.co" target="_blank">Stacks</a> | Maroon Stripe Edition</p>
+          target="_blank"
+          rel="noreferrer"
+        >
+          SP2KYZRN...E09.spinning-board
+        </a>
+      </p>
+      <p>Built on <a href="https://www.stacks.co" target="_blank" rel="noreferrer">Stacks</a> for live round play.</p>
     </footer>
   </div>
 
-  <!-- Stacks Connect (bundled via build tool) -->
   <script type="module" src="app.js"></script>
 </body>
-
 </html>
