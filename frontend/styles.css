@@ -180,6 +180,11 @@ select {
   box-shadow: 0 0 12px currentColor;
 }
 
+.wallet-pill.locked {
+  background: rgba(255, 209, 102, 0.16);
+  color: var(--warning);
+}
+
 .wallet-address {
   color: var(--muted-strong);
   font-size: 0.9rem;

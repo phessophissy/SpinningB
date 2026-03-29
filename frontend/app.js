@@ -138,13 +138,17 @@ function disconnectWallet() {
 function syncWalletUI() {
   if (state.connectedAddress) {
     connectBtn.textContent = 'Disconnect Wallet';
+    connectBtn.classList.add('connected');
     walletInfo.classList.remove('hidden');
+    walletStatusPill.classList.toggle('locked', state.hasPlayed);
     walletStatusPill.textContent = state.hasPlayed ? 'Round locked' : 'Wallet live';
     walletAddress.textContent = formatAddress(state.connectedAddress);
     connectionState.textContent = `Connected as ${formatAddress(state.connectedAddress)}`;
   } else {
     connectBtn.textContent = 'Connect Wallet';
+    connectBtn.classList.remove('connected');
     walletInfo.classList.add('hidden');
+    walletStatusPill.classList.remove('locked');
     connectionState.textContent = 'Wallet not connected';
   }
 
