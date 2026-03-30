@@ -596,14 +596,22 @@ function addActivity(message) {
 }
 
 function renderActivity() {
-  if (!state.activity.length) {
-    activityList.innerHTML = '<li class="activity-empty">No local activity yet. Connect a wallet or refresh stats.</li>';
+  const visibleActivity = state.activity.filter((entry) => {
+    if (state.activityFilter === 'all') return true;
+    return entry.kind === state.activityFilter;
+  });
+
+  if (!visibleActivity.length) {
+    activityList.innerHTML =
+      state.activityFilter === 'all'
+        ? '<li class="activity-empty">No local activity yet. Connect a wallet or refresh stats.</li>'
+        : `<li class="activity-empty">No ${state.activityFilter} activity yet in this session.</li>`;
     return;
   }
 
   activityList.innerHTML = '';
 
-  state.activity.forEach((entry) => {
+  visibleActivity.forEach((entry) => {
     const item = document.createElement('li');
     item.textContent = `${formatTimestamp(entry.at)} · ${entry.message}`;
     activityList.appendChild(item);
