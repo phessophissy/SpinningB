@@ -152,7 +152,7 @@ function initializeApp() {
     addActivity('Wallet session restored.');
   }
 
-  renderActivity();
+  setActivityFilter(state.activityFilter);
   renderLastTransaction();
   applyTheme();
   syncWalletUI();
