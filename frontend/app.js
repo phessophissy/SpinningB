@@ -123,12 +123,7 @@ function initializeApp() {
   jumpToConsoleBtn.addEventListener('click', () => {
     document.getElementById('gameSection')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
-  themeToggleBtn.addEventListener('click', () => {
-    state.theme = state.theme === 'sunrise' ? 'nebula' : 'sunrise';
-    applyTheme();
-    savePreferences();
-    addActivity(`Theme switched to ${state.theme}.`);
-  });
+  themeToggleBtn.addEventListener('click', toggleTheme);
   refreshStatsBtn.addEventListener('click', () => {
     loadGameStats({ reason: 'manual', withStatus: true });
   });
@@ -593,10 +588,7 @@ function handleSpinShortcut(event) {
   }
 
   if (event.key.toLowerCase() === 't') {
-    state.theme = state.theme === 'sunrise' ? 'nebula' : 'sunrise';
-    applyTheme();
-    savePreferences();
-    addActivity(`Theme switched to ${state.theme}.`);
+    toggleTheme();
     return;
   }
 
@@ -802,6 +794,13 @@ function persistLastTransaction(txId) {
 function applyTheme() {
   document.documentElement.setAttribute('data-theme', state.theme === 'sunrise' ? 'sunrise' : 'nebula');
   themeToggleBtn.textContent = state.theme === 'sunrise' ? 'Switch to nebula' : 'Switch theme';
+}
+
+function toggleTheme() {
+  state.theme = state.theme === 'sunrise' ? 'nebula' : 'sunrise';
+  applyTheme();
+  savePreferences();
+  addActivity(`Theme switched to ${state.theme}.`);
 }
 
 function setActivityFilter(nextFilter) {
