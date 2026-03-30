@@ -275,6 +275,24 @@ function updateRefreshLabels() {
   nextRefreshLabel.textContent = nextRefreshAt <= Date.now() ? 'Refreshing soon' : formatCountdown(nextRefreshAt - Date.now());
 }
 
+function startAutoRefreshLoop() {
+  if (state.autoRefreshTimer) {
+    window.clearInterval(state.autoRefreshTimer);
+    state.autoRefreshTimer = null;
+  }
+  if (state.refreshCountdownTimer) {
+    window.clearInterval(state.refreshCountdownTimer);
+    state.refreshCountdownTimer = null;
+  }
+
+  if (state.autoRefreshEnabled) {
+    state.autoRefreshTimer = window.setInterval(() => loadGameStats({ reason: 'poll' }), REFRESH_INTERVAL_MS);
+    state.refreshCountdownTimer = window.setInterval(updateRefreshLabels, 1000);
+  }
+
+  updateRefreshLabels();
+}
+
 async function loadGameStats({ reason = 'auto', withStatus = false } = {}) {
   if (state.isRefreshing) return;
 
