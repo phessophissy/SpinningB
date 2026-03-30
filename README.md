@@ -87,10 +87,11 @@ Then open http://localhost:5173
 
 The frontend now ships as a live round dashboard with:
 
-- a command-center style hero that surfaces wallet and round readiness
-- manual stat refresh controls alongside the normal polling cycle
-- clearer selection and submission states for mainnet play
-- a local session activity feed for wallet, refresh, and transaction events
+- a colorful spectrum-room hero with direct entry, contract, and console actions
+- richer live metrics for seats open, projected player prize, round pressure, and fill progress
+- quick-pick spin controls, keyboard shortcuts, and stronger prepared-move guidance
+- a network desk with chain tip, wallet balance, and rough play-budget visibility
+- local theme, auto-refresh, and activity controls stored in the browser
 
 ### 4. Build for Production
 
