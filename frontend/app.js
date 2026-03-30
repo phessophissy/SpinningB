@@ -293,6 +293,12 @@ function startAutoRefreshLoop() {
   updateRefreshLabels();
 }
 
+function renderSeatSignals() {
+  const seatsLeft = Math.max(ROUND_CAPACITY - state.statsSnapshot.players, 0);
+  seatsOpenEl.textContent = seatsLeft;
+  seatsSignal.textContent = seatsLeft <= 2 ? 'Late round pressure' : seatsLeft <= 5 ? 'Round building' : 'Plenty of room';
+}
+
 async function loadGameStats({ reason = 'auto', withStatus = false } = {}) {
   if (state.isRefreshing) return;
 
