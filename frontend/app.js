@@ -512,6 +512,24 @@ function renderLastTransaction() {
   txLink.textContent = `${state.lastTransaction.slice(0, 20)}...`;
 }
 
+function loadStoredPreferences() {
+  try {
+    return JSON.parse(localStorage.getItem(PREFERENCES_STORAGE_KEY) || '{}');
+  } catch {
+    return {};
+  }
+}
+
+function savePreferences() {
+  localStorage.setItem(
+    PREFERENCES_STORAGE_KEY,
+    JSON.stringify({
+      autoRefreshEnabled: state.autoRefreshEnabled,
+      theme: state.theme,
+    })
+  );
+}
+
 function loadStoredActivity() {
   try {
     return JSON.parse(localStorage.getItem(ACTIVITY_STORAGE_KEY) || '[]');
