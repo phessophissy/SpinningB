@@ -299,6 +299,13 @@ function renderSeatSignals() {
   seatsSignal.textContent = seatsLeft <= 2 ? 'Late round pressure' : seatsLeft <= 5 ? 'Round building' : 'Plenty of room';
 }
 
+function renderPrizeSignals() {
+  const playerPrizeMicroStx = Math.floor(state.statsSnapshot.pot / 2);
+  winnerTakeEl.textContent = state.statsSnapshot.pot > 0 ? formatStx(playerPrizeMicroStx) : '- STX';
+  winnerTakeSignal.textContent =
+    state.statsSnapshot.pot > 0 ? 'Half of the current pot goes to players' : 'Prize appears after the first paid entry';
+}
+
 async function loadGameStats({ reason = 'auto', withStatus = false } = {}) {
   if (state.isRefreshing) return;
 
