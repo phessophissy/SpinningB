@@ -115,6 +115,15 @@ function initializeApp() {
   state.theme = storedPreferences.theme || 'nebula';
 
   connectBtn.addEventListener('click', handleWalletAction);
+  heroConnectBtn.addEventListener('click', handleWalletAction);
+  jumpToConsoleBtn.addEventListener('click', () => {
+    document.getElementById('gameSection')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  themeToggleBtn.addEventListener('click', () => {
+    state.theme = state.theme === 'sunrise' ? 'nebula' : 'sunrise';
+    applyTheme();
+    savePreferences();
+  });
   refreshStatsBtn.addEventListener('click', () => {
     loadGameStats({ reason: 'manual', withStatus: true });
   });
@@ -122,6 +131,17 @@ function initializeApp() {
 
   spinButtons.forEach((btn) => {
     btn.addEventListener('click', () => selectSpin(btn));
+  });
+  activityFilterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      setActivityFilter(button.dataset.activityFilter || 'all');
+    });
+  });
+  clearActivityBtn.addEventListener('click', () => {
+    state.activity = [];
+    localStorage.setItem(ACTIVITY_STORAGE_KEY, JSON.stringify([]));
+    renderActivity();
+    showStatus('Local session activity cleared.', 'info');
   });
   window.addEventListener('keydown', handleSpinShortcut);
 
