@@ -571,3 +571,10 @@ function formatTimestamp(value) {
     day: 'numeric',
   }).format(new Date(value));
 }
+
+function formatCountdown(msRemaining) {
+  const totalSeconds = Math.max(Math.ceil(msRemaining / 1000), 0);
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  return minutes > 0 ? `${minutes}m ${seconds}s` : `${seconds}s`;
+}
