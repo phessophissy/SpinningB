@@ -1,12 +1,12 @@
-# 🎰 Spinning Board Game
+# 🎰 SpinningB Spectrum Room
 
 [![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://spinning-board.vercel.app/)
 [![Stacks](https://img.shields.io/badge/blockchain-Stacks-5546FF)](https://www.stacks.co/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A decentralized spinning board game on the Stacks blockchain (Bitcoin L2).
+A colorful, mainnet-ready spinning board game desk on the Stacks blockchain (Bitcoin L2).
 
-![Chrome Steel Game Screenshot](https://via.placeholder.com/800x400/0d0d1a/c0c0c0?text=🎰+Chrome+Steel+Game+Interface)
+![Spectrum Room Screenshot](https://via.placeholder.com/800x400/140b2b/ffffff?text=🎰+SpinningB+Spectrum+Room)
 
 > **⚙️ Live Demo:** [spinning-board.vercel.app](https://spinning-board.vercel.app/)
 
