@@ -450,6 +450,15 @@ async function callReadOnly(functionName, args = [], sender = CONTRACT_ADDRESS) 
   return parseClarityValue(data.result);
 }
 
+async function fetchNetworkInfo() {
+  const response = await fetch(`${API_URL}/v2/info`);
+  if (!response.ok) {
+    throw new Error(`Network info request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
+
 function parseClarityValue(hex) {
   if (hex.startsWith('0x01')) {
     return Number.parseInt(hex.slice(4), 16);
