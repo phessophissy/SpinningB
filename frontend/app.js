@@ -77,6 +77,7 @@ const roundPulseHint = document.getElementById('roundPulseHint');
 const lastUpdated = document.getElementById('lastUpdated');
 const activityList = document.getElementById('activityList');
 const clearActivityBtn = document.getElementById('clearActivityBtn');
+const toggleRefreshBtn = document.getElementById('toggleRefreshBtn');
 const activityFilterButtons = [...document.querySelectorAll('[data-activity-filter]')];
 const roundCapacity = document.getElementById('roundCapacity');
 const potSignal = document.getElementById('potSignal');
