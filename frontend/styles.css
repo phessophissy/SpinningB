@@ -836,8 +836,10 @@ select {
 }
 
 @media (max-width: 1120px) {
+  .trust-strip,
   .hero-card,
-  .content-grid {
+  .content-grid,
+  .lower-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -870,7 +872,9 @@ select {
   }
 
   .stats-band,
-  .selection-summary {
+  .selection-summary,
+  .console-ribbon,
+  .strategy-grid {
     grid-template-columns: 1fr;
   }
 
@@ -892,5 +896,9 @@ select {
   .activity-head {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .activity-controls {
+    width: 100%;
   }
 }
