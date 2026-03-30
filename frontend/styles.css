@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -7,26 +7,49 @@
 }
 
 :root {
-  --bg: #07111f;
-  --bg-soft: #0d1830;
-  --panel: rgba(10, 19, 38, 0.82);
-  --panel-strong: rgba(7, 14, 29, 0.92);
-  --panel-line: rgba(155, 197, 255, 0.16);
-  --text: #eff5ff;
-  --muted: #8ba1c7;
-  --muted-strong: #b9c8e7;
-  --accent: #ff8a3d;
-  --accent-soft: rgba(255, 138, 61, 0.18);
-  --cyan: #4ee3d1;
-  --cyan-soft: rgba(78, 227, 209, 0.18);
-  --success: #58d68d;
-  --error: #ff667b;
+  --bg: #140b2b;
+  --bg-soft: #101f44;
+  --panel: rgba(22, 16, 56, 0.82);
+  --panel-strong: rgba(13, 12, 43, 0.92);
+  --panel-line: rgba(168, 178, 255, 0.18);
+  --text: #f6f4ff;
+  --muted: #b7bae5;
+  --muted-strong: #dddaf8;
+  --accent: #ff8a57;
+  --accent-soft: rgba(255, 138, 87, 0.18);
+  --cyan: #4cf1d2;
+  --cyan-soft: rgba(76, 241, 210, 0.18);
+  --violet: #8d7dff;
+  --violet-soft: rgba(141, 125, 255, 0.16);
+  --pink: #ff62b0;
+  --pink-soft: rgba(255, 98, 176, 0.18);
+  --success: #65df93;
+  --error: #ff6b8f;
   --warning: #ffd166;
-  --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  --shadow: 0 30px 80px rgba(5, 2, 20, 0.46);
   --radius-xl: 30px;
   --radius-lg: 22px;
   --radius-md: 16px;
   --radius-sm: 12px;
+}
+
+:root[data-theme='sunrise'] {
+  --bg: #24102e;
+  --bg-soft: #4a1e3d;
+  --panel: rgba(58, 20, 54, 0.8);
+  --panel-strong: rgba(41, 18, 46, 0.92);
+  --panel-line: rgba(255, 188, 167, 0.22);
+  --text: #fff7f8;
+  --muted: #f0c8cf;
+  --muted-strong: #ffe7ea;
+  --accent: #ffb347;
+  --accent-soft: rgba(255, 179, 71, 0.18);
+  --cyan: #7ef7dc;
+  --cyan-soft: rgba(126, 247, 220, 0.18);
+  --violet: #ff78c4;
+  --violet-soft: rgba(255, 120, 196, 0.16);
+  --pink: #ff6a7f;
+  --pink-soft: rgba(255, 106, 127, 0.18);
 }
 
 html {
@@ -35,12 +58,13 @@ html {
 
 body {
   min-height: 100vh;
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(78, 227, 209, 0.14), transparent 28%),
-    radial-gradient(circle at 85% 18%, rgba(255, 138, 61, 0.18), transparent 24%),
-    linear-gradient(180deg, #040913 0%, #07111f 45%, #040913 100%);
+    radial-gradient(circle at top left, rgba(76, 241, 210, 0.16), transparent 28%),
+    radial-gradient(circle at 85% 18%, rgba(255, 98, 176, 0.18), transparent 24%),
+    radial-gradient(circle at 50% 100%, rgba(141, 125, 255, 0.16), transparent 32%),
+    linear-gradient(180deg, #0a0620 0%, var(--bg) 48%, #08061a 100%);
 }
 
 a {
