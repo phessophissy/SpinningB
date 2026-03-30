@@ -664,7 +664,7 @@ function addActivity(message) {
     id: `${Date.now()}-${Math.random().toString(16).slice(2, 8)}`,
     message,
     kind:
-      /wallet/i.test(message) ? 'wallet' : /spin|round|stats|transaction|play/i.test(message) ? 'game' : 'all',
+      /wallet|theme/i.test(message) ? 'wallet' : /spin|round|stats|transaction|play/i.test(message) ? 'game' : 'all',
     at: new Date().toISOString(),
   };
 
