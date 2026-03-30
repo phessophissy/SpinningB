@@ -259,8 +259,16 @@
 
           <section class="activity-card" aria-label="Session activity">
             <div class="activity-head">
-              <h4>Session activity</h4>
-              <span class="summary-label">Local browser history</span>
+              <div>
+                <h4>Session activity</h4>
+                <span class="summary-label">Local browser history</span>
+              </div>
+              <div class="activity-controls">
+                <button class="chip-btn is-active" data-activity-filter="all" type="button">All</button>
+                <button class="chip-btn" data-activity-filter="wallet" type="button">Wallet</button>
+                <button class="chip-btn" data-activity-filter="game" type="button">Game</button>
+                <button id="clearActivityBtn" class="chip-btn" type="button">Clear</button>
+              </div>
             </div>
             <ul id="activityList" class="activity-list">
               <li class="activity-empty">No local activity yet. Connect a wallet or refresh stats.</li>
