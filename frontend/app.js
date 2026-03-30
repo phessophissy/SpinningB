@@ -556,6 +556,7 @@ function applyQuickSpin(mode) {
   const targetButton = spinButtons.find((button) => Number(button.dataset.spin) === spin);
   if (targetButton) {
     selectSpin(targetButton);
+    showStatus(`Quick pick loaded spin ${spin}.`, 'info');
   }
 }
 
