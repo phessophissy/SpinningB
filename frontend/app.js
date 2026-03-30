@@ -459,6 +459,19 @@ async function fetchNetworkInfo() {
   return response.json();
 }
 
+async function refreshNetworkDesk() {
+  try {
+    const info = await fetchNetworkInfo();
+    state.networkTip = info.stacks_tip_height ?? info.burn_block_height ?? null;
+    chainTip.textContent = state.networkTip ? `Tip ${state.networkTip}` : 'Tip unavailable';
+    nodeHealth.textContent = 'Mainnet online';
+  } catch (error) {
+    console.error('Failed to fetch network info:', error);
+    chainTip.textContent = 'Tip unavailable';
+    nodeHealth.textContent = 'Mainnet degraded';
+  }
+}
+
 function parseClarityValue(hex) {
   if (hex.startsWith('0x01')) {
     return Number.parseInt(hex.slice(4), 16);
