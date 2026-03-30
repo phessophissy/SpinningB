@@ -187,6 +187,7 @@ function connectWallet() {
       state.connectedAddress = userData.profile.stxAddress.mainnet;
       state.hasPlayed = false;
       syncWalletUI();
+      refreshWalletDesk();
       addActivity('Wallet connected.');
       showStatus('Wallet connected. Choose a spin to prepare your move.', 'success');
       checkIfAlreadyPlayed();
@@ -203,6 +204,7 @@ function disconnectWallet() {
   state.connectedAddress = null;
   state.hasPlayed = false;
   syncWalletUI();
+  refreshWalletDesk();
   showStatus('Wallet disconnected. You can reconnect anytime.', 'info');
   addActivity('Wallet disconnected.');
 }
