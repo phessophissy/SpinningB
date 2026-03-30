@@ -138,7 +138,7 @@ function initializeApp() {
   syncWalletUI();
   syncSelectionUI();
   loadGameStats({ reason: 'initial' });
-  window.setInterval(() => loadGameStats({ reason: 'poll' }), 30000);
+  startAutoRefreshLoop();
 
   if (state.connectedAddress) {
     checkIfAlreadyPlayed();
