@@ -482,6 +482,26 @@ async function fetchWalletBalance(address) {
   return response.json();
 }
 
+async function refreshWalletDesk() {
+  if (!state.connectedAddress) {
+    state.walletBalanceMicroStx = null;
+    walletBalance.textContent = 'Connect wallet';
+    playBudget.textContent = 'Waiting for balance';
+    return;
+  }
+
+  try {
+    const balanceData = await fetchWalletBalance(state.connectedAddress);
+    state.walletBalanceMicroStx = Number(balanceData.balance || 0);
+    walletBalance.textContent = formatStx(state.walletBalanceMicroStx);
+    playBudget.textContent = `${Math.floor(state.walletBalanceMicroStx / 1000).toLocaleString()} entries at 0.001 STX`;
+  } catch (error) {
+    console.error('Failed to fetch wallet balance:', error);
+    walletBalance.textContent = 'Balance unavailable';
+    playBudget.textContent = 'Could not estimate budget';
+  }
+}
+
 function parseClarityValue(hex) {
   if (hex.startsWith('0x01')) {
     return Number.parseInt(hex.slice(4), 16);
