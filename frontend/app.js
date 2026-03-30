@@ -107,6 +107,7 @@ const nodeHealth = document.getElementById('nodeHealth');
 const walletBalance = document.getElementById('walletBalance');
 const playBudget = document.getElementById('playBudget');
 const spinButtons = [...document.querySelectorAll('.spin-btn')];
+const quickSpinButtons = [...document.querySelectorAll('[data-quick-spin]')];
 
 document.addEventListener('DOMContentLoaded', () => {
   initializeApp();
