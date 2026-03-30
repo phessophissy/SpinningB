@@ -389,6 +389,7 @@ async function loadGameStats({ reason = 'auto', withStatus = false } = {}) {
       callReadOnly('get-total-pot'),
       callReadOnly('get-highest-spin'),
     ]);
+    refreshNetworkDesk();
 
     currentRoundEl.textContent = round;
     playerCountEl.textContent = `${players}/${ROUND_CAPACITY}`;
