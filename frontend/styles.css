@@ -733,6 +733,17 @@ select {
   margin-bottom: 14px;
 }
 
+.activity-head > div:first-child {
+  display: grid;
+  gap: 4px;
+}
+
+.activity-controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .activity-list {
   display: grid;
   gap: 10px;
@@ -750,6 +761,27 @@ select {
 
 .activity-empty {
   color: var(--muted);
+}
+
+.chip-btn {
+  padding: 9px 13px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted-strong);
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.chip-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.chip-btn.is-active {
+  background: var(--violet-soft);
+  border-color: rgba(141, 125, 255, 0.45);
+  color: var(--text);
 }
 
 .footer {
