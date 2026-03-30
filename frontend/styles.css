@@ -673,6 +673,10 @@ select {
   gap: 12px;
 }
 
+.feed-controls {
+  margin-top: 16px;
+}
+
 .status-message {
   margin-top: 16px;
   padding: 15px 16px;
