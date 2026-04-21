@@ -3,7 +3,7 @@
  * Utility for: Staking rewards for loyal players
  */
 
-const SCRIPT_VERSION = '2.0.0';
+const SCRIPT_VERSION = '2.0.0-1776756389';
 
 function validateInput2(params) {
   const required = ['address', 'amount'];
