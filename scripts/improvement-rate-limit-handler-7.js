@@ -3,7 +3,7 @@
  * Utility for: API rate limit handler middleware
  */
 
-const SCRIPT_VERSION = '7.0.0';
+const SCRIPT_VERSION = '7.0.0-1776756389';
 
 function validateInput7(params) {
   const required = ['address', 'amount'];
