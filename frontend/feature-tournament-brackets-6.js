@@ -4,7 +4,7 @@
  * Auto-generated enhancement for the Spinning Board frontend
  */
 
-export const MODULE_ID = 'feature-tournament-brackets-6';
+export const MODULE_ID = 'feature-tournament-brackets-6-1776756389';
 export const VERSION = '1.0.6';
 
 export function init6(config = {}) {
