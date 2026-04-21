@@ -3,7 +3,7 @@
  * Utility for: Transaction retry logic with backoff
  */
 
-const SCRIPT_VERSION = '7.0.0';
+const SCRIPT_VERSION = '7.0.0-1776756389';
 
 function validateInput7(params) {
   const required = ['address', 'amount'];
