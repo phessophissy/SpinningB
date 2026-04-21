@@ -4,7 +4,7 @@
  * Auto-generated enhancement for the Spinning Board frontend
  */
 
-export const MODULE_ID = 'feature-custom-board-skins-1';
+export const MODULE_ID = 'feature-custom-board-skins-1-1776756389';
 export const VERSION = '1.0.1';
 
 export function init1(config = {}) {
