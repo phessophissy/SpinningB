@@ -24,6 +24,7 @@ const API_URL = 'https://stacks-node-api.mainnet.stacks.co';
 const ACTIVITY_STORAGE_KEY = 'spinningb-session-activity';
 const LAST_TX_STORAGE_KEY = 'spinningb-last-tx';
 const PREFERENCES_STORAGE_KEY = 'spinningb-ui-preferences';
+const STREAK_STORAGE_KEY = 'spinningb-streak-profile';
 const MAX_ACTIVITY_ITEMS = 6;
 const ROUND_CAPACITY = 10;
 const REFRESH_INTERVAL_MS = 30000;
@@ -43,7 +44,19 @@ const state = {
   autoRefreshEnabled: true,
   walletBalanceMicroStx: null,
   networkTip: null,
-  theme: 'nebula',
+  theme: 'chain',
+  soundEnabled: true,
+  apiLatencyMs: null,
+  mempoolSize: null,
+  suggestedFeeMicroStx: null,
+  riskSignal: 'Waiting for sync',
+  potHistory: [],
+  oracle: {
+    spin: null,
+    confidence: 0,
+    reason: 'No data yet',
+  },
+  streak: loadStoredStreak(),
   statsSnapshot: {
     round: null,
     players: 0,
