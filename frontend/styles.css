@@ -244,6 +244,7 @@ select {
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 999px;
   padding: 10px 12px;
+  min-width: 130px;
 }
 
 .wallet-info {
@@ -1005,6 +1006,14 @@ select {
   .wallet-section {
     justify-content: space-between;
   }
+
+  .theme-label {
+    width: 100%;
+  }
+
+  .theme-select {
+    flex: 1 1 180px;
+  }
 }
 
 @media (max-width: 620px) {
@@ -1015,7 +1024,11 @@ select {
   .hero-card,
   .rules-card,
   .command-card,
-  .intel-card {
+  .intel-card,
+  .chain-pulse-card,
+  .oracle-card,
+  .streak-card,
+  .achievements-card {
     padding: 18px;
   }
 
@@ -1048,5 +1061,9 @@ select {
 
   .activity-controls {
     width: 100%;
+  }
+
+  .achievement-list {
+    grid-template-columns: 1fr;
   }
 }
