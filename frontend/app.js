@@ -989,6 +989,43 @@ function renderActivity() {
   });
 }
 
+function exportActivity() {
+  const payload = {
+    exportedAt: new Date().toISOString(),
+    activity: state.activity,
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const anchor = document.createElement('a');
+  anchor.href = url;
+  anchor.download = `spinningb-activity-${Date.now()}.json`;
+  document.body.appendChild(anchor);
+  anchor.click();
+  anchor.remove();
+  URL.revokeObjectURL(url);
+  showStatus('Session activity exported.', 'info');
+}
+
+async function importActivity(event) {
+  const file = event.target.files?.[0];
+  if (!file) return;
+
+  try {
+    const text = await file.text();
+    const payload = JSON.parse(text);
+    const incoming = Array.isArray(payload.activity) ? payload.activity : [];
+    state.activity = incoming.slice(0, MAX_ACTIVITY_ITEMS);
+    localStorage.setItem(ACTIVITY_STORAGE_KEY, JSON.stringify(state.activity));
+    renderActivity();
+    showStatus('Session activity imported.', 'success');
+  } catch (error) {
+    console.error('Failed to import activity', error);
+    showStatus('Could not import activity JSON.', 'error');
+  } finally {
+    importActivityInput.value = '';
+  }
+}
+
 function renderLastTransaction() {
   if (!state.lastTransaction) {
     txHistory.classList.add('hidden');
