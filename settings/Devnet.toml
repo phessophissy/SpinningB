@@ -3,15 +3,15 @@ name = "Development"
 subnet = "10.0.0.0/8"
 
 [accounts.deployer]
-mnemonic = "fetch outside black test wash cover just actual execute nice door want"
+mnemonic = "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
 balance = 100_000_000_000_000
 
 [accounts.wallet_1]
-mnemonic = "spoil sock coyote include verify comic jacket gain beauty tank flush victory"
+mnemonic = "test test test test test test test test test test test junk"
 balance = 100_000_000_000_000
 
 [accounts.wallet_2]
-mnemonic = "arrange scale orient half ugly kid bike twin magnet joke hurt fiber"
+mnemonic = "zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo wrong"
 balance = 1_000_000_000_000
 
 [devnet]
