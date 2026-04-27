@@ -1199,6 +1199,7 @@ function toggleSound() {
 
 function syncSoundUI() {
   soundToggleBtn.textContent = state.soundEnabled ? 'Sound on' : 'Sound off';
+  soundToggleBtn.classList.toggle('is-active', state.soundEnabled);
 }
 
 function setActivityFilter(nextFilter) {

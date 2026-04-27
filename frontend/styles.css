@@ -975,6 +975,11 @@ select {
   color: var(--text);
 }
 
+.btn-ghost.is-active {
+  border-color: rgba(101, 223, 147, 0.45);
+  background: rgba(101, 223, 147, 0.18);
+}
+
 .footer {
   margin-top: 22px;
   padding: 22px 12px 0;
