@@ -425,7 +425,9 @@ function renderRoundStrategy() {
   roundPressure.textContent = players >= 8 ? 'Heavy pressure' : players >= 5 ? 'Moderate pressure' : 'Light pressure';
   conservativeSpin.textContent = highest >= 7 ? `Need ${highest} or better pressure awareness` : 'Middle-to-high spins still in play';
   aggressiveSpin.textContent = highest >= 9 ? 'Only top-end numbers can overtake now' : 'Upper-board plays can still seize control';
-  roundStory.textContent = highest > 0 ? `Current high spin is ${highest} with ${players} seat${players === 1 ? '' : 's'} filled.` : 'No benchmark spin has been set yet.';
+  roundStory.textContent = highest > 0
+    ? `High spin ${highest} with ${players} seat${players === 1 ? '' : 's'} filled. Chain risk: ${state.riskSignal}.`
+    : `No benchmark spin yet. Chain risk: ${state.riskSignal}.`;
   splitNote.textContent = players > 1 ? 'Equal top spins split the player-side prize evenly.' : 'Single entry rounds still respect the normal split rules.';
 }
 
