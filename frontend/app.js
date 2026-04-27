@@ -835,6 +835,7 @@ function savePreferences() {
     JSON.stringify({
       autoRefreshEnabled: state.autoRefreshEnabled,
       theme: state.theme,
+      soundEnabled: state.soundEnabled,
     })
   );
 }
