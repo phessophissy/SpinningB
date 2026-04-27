@@ -915,6 +915,10 @@ select {
   color: #ffd7dd;
 }
 
+#nextRefreshLabel.urgent {
+  color: var(--warning);
+}
+
 .tx-history,
 .activity-card {
   margin-top: 16px;

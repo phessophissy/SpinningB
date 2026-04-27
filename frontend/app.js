@@ -368,7 +368,10 @@ function updateRefreshLabels() {
   }
 
   const nextRefreshAt = state.lastRefreshAt + REFRESH_INTERVAL_MS;
-  nextRefreshLabel.textContent = nextRefreshAt <= Date.now() ? 'Refreshing soon' : formatCountdown(nextRefreshAt - Date.now());
+  const msRemaining = nextRefreshAt - Date.now();
+  const isUrgent = msRemaining > 0 && msRemaining <= 10000;
+  nextRefreshLabel.textContent = nextRefreshAt <= Date.now() ? 'Refreshing soon' : formatCountdown(msRemaining);
+  nextRefreshLabel.classList.toggle('urgent', isUrgent);
 }
 
 function startAutoRefreshLoop() {
