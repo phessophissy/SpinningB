@@ -999,6 +999,22 @@ function renderStreak() {
   localPlays.textContent = String(state.streak.localPlays || 0);
 }
 
+function renderAchievements() {
+  if (!achievementList) return;
+
+  const unlocked = {
+    'First Spin': state.streak.localPlays >= 1,
+    'High Roller': state.streak.peakSpin >= 9,
+    'Table Anchor': state.streak.consecutivePlays >= 5,
+    'Oracle Follower': state.streak.oracleMatches >= 3,
+  };
+
+  [...achievementList.querySelectorAll('.achievement-item')].forEach((item) => {
+    const label = item.textContent?.trim() || '';
+    item.classList.toggle('unlocked', Boolean(unlocked[label]));
+  });
+}
+
 function loadStoredPreferences() {
   try {
     return JSON.parse(localStorage.getItem(PREFERENCES_STORAGE_KEY) || '{}');
