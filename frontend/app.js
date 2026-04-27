@@ -538,12 +538,37 @@ async function callReadOnly(functionName, args = [], sender = CONTRACT_ADDRESS) 
 }
 
 async function fetchNetworkInfo() {
+  const startedAt = performance.now();
   const response = await fetch(`${API_URL}/v2/info`);
   if (!response.ok) {
     throw new Error(`Network info request failed with status ${response.status}`);
   }
 
-  return response.json();
+  const payload = await response.json();
+  return {
+    payload,
+    latencyMs: Math.round(performance.now() - startedAt),
+  };
+}
+
+async function fetchMempoolPressure() {
+  const response = await fetch(`${API_URL}/extended/v1/tx/mempool?limit=1&offset=0`);
+  if (!response.ok) {
+    throw new Error(`Mempool request failed with status ${response.status}`);
+  }
+
+  const data = await response.json();
+  return Number(data.total || 0);
+}
+
+async function fetchSuggestedFee() {
+  const response = await fetch(`${API_URL}/v2/fees/transfer`);
+  if (!response.ok) {
+    throw new Error(`Fee request failed with status ${response.status}`);
+  }
+
+  const data = await response.json();
+  return Number(data?.fee_rate || data || 0);
 }
 
 async function refreshNetworkDesk() {
