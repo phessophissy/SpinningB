@@ -823,6 +823,7 @@ function applyQuickSpin(mode) {
     mode === 'low' ? 2
       : mode === 'mid' ? 5
         : mode === 'high' ? 9
+          : mode === 'smart' ? Math.min(Math.max((state.statsSnapshot.highest || 6) + 1, 4), 10)
           : Math.floor(Math.random() * ROUND_CAPACITY) + 1;
 
   const targetButton = spinButtons.find((button) => Number(button.dataset.spin) === spin);
