@@ -973,7 +973,8 @@ function showStatus(message, type = 'info') {
     window.clearTimeout(state.statusTimer);
   }
 
-  statusMessage.textContent = message;
+  const prefix = type === 'success' ? 'Success: ' : type === 'error' ? 'Error: ' : 'Info: ';
+  statusMessage.textContent = `${prefix}${message}`;
   statusMessage.className = `status-message ${type}`;
   statusMessage.classList.remove('hidden');
 
