@@ -485,6 +485,60 @@ function renderPotSparkline() {
   ctx.stroke();
 }
 
+function computeOracleSignal() {
+  const { players, highest } = state.statsSnapshot;
+
+  if (players === 0) {
+    state.oracle = {
+      spin: 7,
+      confidence: 54,
+      reason: 'Fresh round. Upper-mid spin opens safely.',
+    };
+    return;
+  }
+
+  const targetSpin = Math.min(Math.max(highest + 1, 3), 10);
+  const confidence = Math.min(88, 48 + players * 4 + (highest >= 8 ? 12 : 0));
+  const reason = highest >= 9
+    ? 'Board is hot. Only top-end plays can overtake.'
+    : players >= 7
+      ? 'Late seats favor decisive upper-board picks.'
+      : 'Room still forming. Keep pressure above current high.';
+
+  state.oracle = {
+    spin: targetSpin,
+    confidence,
+    reason,
+  };
+}
+
+function renderOracleSignal() {
+  if (!state.oracle.spin) {
+    oracleSpin.textContent = 'Waiting for round sync';
+    oracleConfidence.textContent = '0%';
+    oracleReason.textContent = 'No data yet';
+    return;
+  }
+
+  oracleSpin.textContent = `Spin ${state.oracle.spin}`;
+  oracleConfidence.textContent = `${state.oracle.confidence}%`;
+  oracleReason.textContent = state.oracle.reason;
+}
+
+function applyOracleSuggestion() {
+  if (!state.oracle.spin) {
+    showStatus('Oracle needs fresh round data first.', 'info');
+    return;
+  }
+
+  const target = spinButtons.find((btn) => Number(btn.dataset.spin) === state.oracle.spin);
+  if (target) {
+    selectSpin(target);
+    addActivity(`Applied oracle suggestion: spin ${state.oracle.spin}.`);
+    showStatus(`Oracle loaded spin ${state.oracle.spin}.`, 'info');
+  }
+}
+
 function renderDerivedDashboard() {
   renderSeatSignals();
   renderPrizeSignals();
