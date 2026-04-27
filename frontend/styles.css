@@ -326,6 +326,24 @@ select {
   display: block;
 }
 
+.heat-wrap {
+  margin-top: 14px;
+}
+
+.heat-bars {
+  margin-top: 8px;
+  height: 48px;
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.heat-bar {
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
 .achievement-list {
   list-style: none;
   display: grid;
