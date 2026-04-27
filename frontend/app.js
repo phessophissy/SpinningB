@@ -967,6 +967,38 @@ function renderLastTransaction() {
   txLink.textContent = `${state.lastTransaction.slice(0, 20)}...`;
 }
 
+function loadStoredStreak() {
+  try {
+    const value = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '{}');
+    return {
+      consecutivePlays: Number(value.consecutivePlays || 0),
+      lastSpin: Number(value.lastSpin || 0),
+      peakSpin: Number(value.peakSpin || 0),
+      localPlays: Number(value.localPlays || 0),
+      oracleMatches: Number(value.oracleMatches || 0),
+    };
+  } catch {
+    return {
+      consecutivePlays: 0,
+      lastSpin: 0,
+      peakSpin: 0,
+      localPlays: 0,
+      oracleMatches: 0,
+    };
+  }
+}
+
+function saveStreak() {
+  localStorage.setItem(STREAK_STORAGE_KEY, JSON.stringify(state.streak));
+}
+
+function renderStreak() {
+  playStreak.textContent = String(state.streak.consecutivePlays || 0);
+  lastSpin.textContent = state.streak.lastSpin ? `Spin ${state.streak.lastSpin}` : '-';
+  peakSpin.textContent = state.streak.peakSpin ? `Spin ${state.streak.peakSpin}` : '-';
+  localPlays.textContent = String(state.streak.localPlays || 0);
+}
+
 function loadStoredPreferences() {
   try {
     return JSON.parse(localStorage.getItem(PREFERENCES_STORAGE_KEY) || '{}');
