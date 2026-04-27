@@ -739,6 +739,9 @@ async function refreshNetworkDesk() {
         : 'Stable route';
     riskSignal.textContent = state.riskSignal;
     nodeHealth.textContent = state.apiLatencyMs > 1000 ? 'Mainnet slow' : 'Mainnet online';
+    setPulseTone(apiLatency, state.apiLatencyMs > 1000 ? 'high' : state.apiLatencyMs > 500 ? 'medium' : 'low');
+    setPulseTone(mempoolPressure, state.mempoolSize > 5000 ? 'high' : state.mempoolSize > 2000 ? 'medium' : 'low');
+    setPulseTone(riskSignal, state.riskSignal.includes('High') ? 'high' : state.riskSignal.includes('Moderate') ? 'medium' : 'low');
   } catch (error) {
     console.error('Failed to fetch network info:', error);
     chainTip.textContent = 'Tip unavailable';
@@ -748,6 +751,12 @@ async function refreshNetworkDesk() {
     suggestedFee.textContent = 'Unavailable';
     riskSignal.textContent = 'Signal unavailable';
   }
+}
+
+function setPulseTone(node, tone) {
+  const block = node?.closest('.intel-block');
+  if (!block) return;
+  block.dataset.tone = tone;
 }
 
 async function fetchWalletBalance(address) {

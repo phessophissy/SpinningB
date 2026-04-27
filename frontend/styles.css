@@ -789,6 +789,18 @@ select {
   line-height: 1.45;
 }
 
+.intel-block[data-tone='low'] {
+  border-color: rgba(101, 223, 147, 0.28);
+}
+
+.intel-block[data-tone='medium'] {
+  border-color: rgba(255, 209, 102, 0.3);
+}
+
+.intel-block[data-tone='high'] {
+  border-color: rgba(255, 107, 143, 0.32);
+}
+
 .btn {
   border: none;
   border-radius: 999px;
