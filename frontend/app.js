@@ -83,6 +83,8 @@ const playBtnText = document.getElementById('playBtnText');
 const statusMessage = document.getElementById('statusMessage');
 const txHistory = document.getElementById('txHistory');
 const txLink = document.getElementById('txLink');
+const copyTxBtn = document.getElementById('copyTxBtn');
+const scrollTopBtn = document.getElementById('scrollTopBtn');
 const walletInfo = document.getElementById('walletInfo');
 const walletStatusPill = document.getElementById('walletStatusPill');
 const walletAddress = document.getElementById('walletAddress');
@@ -203,6 +205,10 @@ function initializeApp() {
   importActivityBtn.addEventListener('click', () => importActivityInput?.click());
   importActivityInput?.addEventListener('change', importActivity);
   applyOracleBtn?.addEventListener('click', applyOracleSuggestion);
+  copyTxBtn?.addEventListener('click', copyLastTransaction);
+  scrollTopBtn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
   toggleRefreshBtn.addEventListener('click', () => {
     state.autoRefreshEnabled = !state.autoRefreshEnabled;
     savePreferences();
@@ -211,6 +217,7 @@ function initializeApp() {
     showStatus(state.autoRefreshEnabled ? 'Auto refresh resumed.' : 'Auto refresh paused.', 'info');
   });
   window.addEventListener('keydown', handleSpinShortcut);
+  window.addEventListener('scroll', syncScrollTopButton);
 
   if (userSession.isUserSignedIn()) {
     const userData = userSession.loadUserData();
@@ -1085,6 +1092,22 @@ function renderLastTransaction() {
   txHistory.classList.remove('hidden');
   txLink.href = `https://explorer.stacks.co/txid/${state.lastTransaction}?chain=mainnet`;
   txLink.textContent = `${state.lastTransaction.slice(0, 20)}...`;
+}
+
+function copyLastTransaction() {
+  if (!state.lastTransaction) {
+    showStatus('No transaction available to copy yet.', 'info');
+    return;
+  }
+
+  navigator.clipboard.writeText(state.lastTransaction)
+    .then(() => showStatus('Transaction id copied to clipboard.', 'success'))
+    .catch(() => showStatus('Could not copy transaction id.', 'error'));
+}
+
+function syncScrollTopButton() {
+  const shouldShow = window.scrollY > 600;
+  scrollTopBtn?.classList.toggle('hidden', !shouldShow);
 }
 
 function loadStoredStreak() {
