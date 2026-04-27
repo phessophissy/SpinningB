@@ -541,12 +541,14 @@ function renderOracleSignal() {
     oracleSpin.textContent = 'Waiting for round sync';
     oracleConfidence.textContent = '0%';
     oracleReason.textContent = 'No data yet';
+    applyOracleBtn.disabled = true;
     return;
   }
 
   oracleSpin.textContent = `Spin ${state.oracle.spin}`;
   oracleConfidence.textContent = `${state.oracle.confidence}%`;
   oracleReason.textContent = state.oracle.reason;
+  applyOracleBtn.disabled = false;
 }
 
 function applyOracleSuggestion() {
