@@ -481,6 +481,7 @@ async function loadGameStats({ reason = 'auto', withStatus = false } = {}) {
     totalPotEl.textContent = formatStx(pot);
     highestSpinEl.textContent = highest > 0 ? highest : '-';
     state.statsSnapshot = { round, players, pot, highest };
+    state.potHistory = [...state.potHistory, pot].slice(-24);
 
     const seatsLeft = Math.max(ROUND_CAPACITY - players, 0);
     roundCapacity.textContent = seatsLeft === 0 ? 'Round is full' : `${seatsLeft} seat${seatsLeft === 1 ? '' : 's'} open`;
@@ -492,6 +493,9 @@ async function loadGameStats({ reason = 'auto', withStatus = false } = {}) {
     lastUpdated.textContent = formatTimestamp(new Date());
     updateRefreshLabels();
     renderDerivedDashboard();
+    renderPotSparkline();
+    computeOracleSignal();
+    renderOracleSignal();
     refreshWalletDesk();
 
     if (withStatus) {
