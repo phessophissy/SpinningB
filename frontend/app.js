@@ -440,13 +440,13 @@ function renderSelectionRead() {
 
   payoutStance.textContent = pot > 0 ? `${formatStx(Math.floor(pot / 2))} player-side prize on the line` : 'First entry sets the pot in motion';
   if (highest === 0) {
-    winningRead.textContent = 'No spin benchmark yet in this round';
+    winningRead.textContent = `No benchmark yet. Oracle leans spin ${state.oracle.spin || '-'}.`;
   } else if (state.selectedSpin > highest) {
     winningRead.textContent = 'Your prepared spin currently leads the board';
   } else if (state.selectedSpin === highest) {
     winningRead.textContent = 'Your prepared spin would currently tie the lead';
   } else {
-    winningRead.textContent = `Your prepared spin trails the current high of ${highest}`;
+    winningRead.textContent = `Your prepared spin trails high ${highest}. Oracle: ${state.oracle.spin || '-'}.`;
   }
 }
 
