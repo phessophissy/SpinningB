@@ -1050,7 +1050,15 @@ async function importActivity(event) {
     const text = await file.text();
     const payload = JSON.parse(text);
     const incoming = Array.isArray(payload.activity) ? payload.activity : [];
-    state.activity = incoming.slice(0, MAX_ACTIVITY_ITEMS);
+    const unique = new Map();
+    [...incoming, ...state.activity].forEach((entry) => {
+      if (entry?.id && !unique.has(entry.id)) {
+        unique.set(entry.id, entry);
+      }
+    });
+    state.activity = [...unique.values()]
+      .sort((a, b) => new Date(b.at).getTime() - new Date(a.at).getTime())
+      .slice(0, MAX_ACTIVITY_ITEMS);
     localStorage.setItem(ACTIVITY_STORAGE_KEY, JSON.stringify(state.activity));
     renderActivity();
     showStatus('Session activity imported.', 'success');
