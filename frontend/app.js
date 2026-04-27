@@ -151,7 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function initializeApp() {
   const storedPreferences = loadStoredPreferences();
   state.autoRefreshEnabled = storedPreferences.autoRefreshEnabled ?? true;
-  state.theme = storedPreferences.theme || 'nebula';
+  state.theme = storedPreferences.theme || 'chain';
+  state.soundEnabled = storedPreferences.soundEnabled ?? true;
 
   connectBtn.addEventListener('click', handleWalletAction);
   heroConnectBtn.addEventListener('click', handleWalletAction);
@@ -159,6 +160,20 @@ function initializeApp() {
     document.getElementById('gameSection')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
   themeToggleBtn.addEventListener('click', toggleTheme);
+  themeSelect.addEventListener('change', () => {
+    state.theme = themeSelect.value;
+    applyTheme();
+    savePreferences();
+    addActivity(`Theme switched to ${state.theme}.`);
+  });
+  soundToggleBtn.addEventListener('click', toggleSound);
+  shortcutsBtn.addEventListener('click', () => shortcutsDialog?.showModal());
+  closeShortcutsBtn?.addEventListener('click', () => shortcutsDialog?.close());
+  shortcutsDialog?.addEventListener('click', (event) => {
+    if (event.target === shortcutsDialog) {
+      shortcutsDialog.close();
+    }
+  });
   refreshStatsBtn.addEventListener('click', () => {
     loadGameStats({ reason: 'manual', withStatus: true });
   });
@@ -183,6 +198,10 @@ function initializeApp() {
     renderActivity();
     showStatus('Local session activity cleared.', 'info');
   });
+  exportActivityBtn.addEventListener('click', exportActivity);
+  importActivityBtn.addEventListener('click', () => importActivityInput?.click());
+  importActivityInput?.addEventListener('change', importActivity);
+  applyOracleBtn?.addEventListener('click', applyOracleSuggestion);
   toggleRefreshBtn.addEventListener('click', () => {
     state.autoRefreshEnabled = !state.autoRefreshEnabled;
     savePreferences();
@@ -202,6 +221,9 @@ function initializeApp() {
   setActivityFilter(state.activityFilter);
   renderLastTransaction();
   applyTheme();
+  syncSoundUI();
+  renderStreak();
+  renderAchievements();
   syncWalletUI();
   syncSelectionUI();
   refreshWalletDesk();
