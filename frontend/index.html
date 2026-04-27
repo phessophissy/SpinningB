@@ -41,7 +41,15 @@
           <span id="walletStatusPill" class="wallet-pill">Wallet idle</span>
           <span id="walletAddress" class="wallet-address"></span>
         </div>
+        <label class="theme-label" for="themeSelect">Theme</label>
+        <select id="themeSelect" class="theme-select" aria-label="Choose dashboard theme">
+          <option value="chain">Stacks Chain</option>
+          <option value="nebula">Nebula</option>
+          <option value="sunrise">Sunrise</option>
+        </select>
         <button id="themeToggleBtn" class="btn btn-ghost" type="button">Switch theme</button>
+        <button id="soundToggleBtn" class="btn btn-ghost" type="button">Sound on</button>
+        <button id="shortcutsBtn" class="btn btn-ghost" type="button">Shortcuts</button>
         <button id="connectBtn" class="btn btn-connect">Connect Wallet</button>
       </div>
     </header>
@@ -290,6 +298,9 @@
                 <button class="chip-btn is-active" data-activity-filter="all" type="button">All</button>
                 <button class="chip-btn" data-activity-filter="wallet" type="button">Wallet</button>
                 <button class="chip-btn" data-activity-filter="game" type="button">Game</button>
+                <button id="exportActivityBtn" class="chip-btn" type="button">Export</button>
+                <button id="importActivityBtn" class="chip-btn" type="button">Import</button>
+                <input id="importActivityInput" type="file" accept="application/json" class="hidden" aria-hidden="true" tabindex="-1" />
                 <button id="clearActivityBtn" class="chip-btn" type="button">Clear</button>
               </div>
             </div>
@@ -301,6 +312,62 @@
       </section>
 
       <section class="lower-grid">
+        <section class="panel chain-pulse-card">
+          <div class="panel-head">
+            <p class="eyebrow">Chain Pulse</p>
+            <h3>Stacks wire signals</h3>
+          </div>
+
+          <div class="strategy-grid">
+            <div class="intel-block">
+              <span class="summary-label">API latency</span>
+              <strong id="apiLatency">Measuring...</strong>
+            </div>
+            <div class="intel-block">
+              <span class="summary-label">Mempool pressure</span>
+              <strong id="mempoolPressure">Loading</strong>
+            </div>
+            <div class="intel-block">
+              <span class="summary-label">Suggested fee</span>
+              <strong id="suggestedFee">Loading</strong>
+            </div>
+            <div class="intel-block">
+              <span class="summary-label">Risk signal</span>
+              <strong id="riskSignal">Waiting for sync</strong>
+            </div>
+          </div>
+
+          <div class="sparkline-wrap">
+            <span class="summary-label">Pot trend (session)</span>
+            <canvas id="potSparkline" width="560" height="100" aria-label="Pot trend chart"></canvas>
+          </div>
+        </section>
+
+        <section class="panel oracle-card">
+          <div class="panel-head">
+            <p class="eyebrow">Round Oracle</p>
+            <h3>Suggested spin stance</h3>
+          </div>
+          <div class="strategy-grid">
+            <div class="intel-block">
+              <span class="summary-label">Oracle spin</span>
+              <strong id="oracleSpin">Waiting for round sync</strong>
+            </div>
+            <div class="intel-block">
+              <span class="summary-label">Confidence</span>
+              <strong id="oracleConfidence">0%</strong>
+            </div>
+            <div class="intel-block">
+              <span class="summary-label">Why now</span>
+              <strong id="oracleReason">No data yet</strong>
+            </div>
+            <div class="intel-block">
+              <span class="summary-label">Action</span>
+              <button id="applyOracleBtn" class="chip-btn" type="button">Apply suggestion</button>
+            </div>
+          </div>
+        </section>
+
         <section class="panel strategy-card">
           <div class="panel-head">
             <p class="eyebrow">Spin Board</p>
@@ -353,7 +420,62 @@
           </div>
         </section>
       </section>
+
+      <section class="lower-grid">
+        <section class="panel streak-card">
+          <div class="panel-head">
+            <p class="eyebrow">Player Streak</p>
+            <h3>Session momentum</h3>
+          </div>
+          <div class="strategy-grid">
+            <div class="intel-block">
+              <span class="summary-label">Consecutive plays</span>
+              <strong id="playStreak">0</strong>
+            </div>
+            <div class="intel-block">
+              <span class="summary-label">Last spin</span>
+              <strong id="lastSpin">-</strong>
+            </div>
+            <div class="intel-block">
+              <span class="summary-label">Peak spin</span>
+              <strong id="peakSpin">-</strong>
+            </div>
+            <div class="intel-block">
+              <span class="summary-label">Total local plays</span>
+              <strong id="localPlays">0</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel achievements-card">
+          <div class="panel-head">
+            <p class="eyebrow">Achievement Grid</p>
+            <h3>Session unlocks</h3>
+          </div>
+          <ul id="achievementList" class="achievement-list">
+            <li class="achievement-item">First Spin</li>
+            <li class="achievement-item">High Roller</li>
+            <li class="achievement-item">Table Anchor</li>
+            <li class="achievement-item">Oracle Follower</li>
+          </ul>
+        </section>
+      </section>
     </main>
+
+    <dialog id="shortcutsDialog" class="shortcuts-dialog">
+      <div class="dialog-card">
+        <h3>Keyboard shortcuts</h3>
+        <ul>
+          <li>1-9: Select spin</li>
+          <li>0: Select spin 10</li>
+          <li>R: Refresh round stats</li>
+          <li>T: Toggle theme</li>
+          <li>S: Toggle sound</li>
+          <li>O: Apply oracle suggestion</li>
+        </ul>
+        <button id="closeShortcutsBtn" class="btn btn-ghost" type="button">Close</button>
+      </div>
+    </dialog>
 
     <footer class="footer">
       <p>
