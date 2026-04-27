@@ -413,6 +413,8 @@ function renderRoundPulse() {
 function renderRoundProgress() {
   const ratio = Math.min(Math.max(state.statsSnapshot.players / ROUND_CAPACITY, 0), 1);
   roundProgressFill.style.width = `${(ratio * 100).toFixed(2)}%`;
+  const level = ratio >= 0.8 ? 'high' : ratio >= 0.4 ? 'medium' : 'low';
+  roundProgressFill.dataset.level = level;
   roundProgressFill.parentElement?.setAttribute('aria-valuenow', String(state.statsSnapshot.players));
   roundProgressLabel.textContent =
     state.statsSnapshot.players === 0

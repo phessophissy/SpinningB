@@ -432,6 +432,18 @@ select {
   transition: width 0.25s ease;
 }
 
+.progress-track span[data-level='low'] {
+  background: linear-gradient(90deg, #33d5ff, #5fa8ff);
+}
+
+.progress-track span[data-level='medium'] {
+  background: linear-gradient(90deg, #33d5ff, #ffb347);
+}
+
+.progress-track span[data-level='high'] {
+  background: linear-gradient(90deg, #ffb347, #ff6b8f);
+}
+
 .progress-label {
   margin-top: 12px;
   color: var(--muted-strong);
