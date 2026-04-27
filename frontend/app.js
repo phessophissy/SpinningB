@@ -851,12 +851,31 @@ function persistLastTransaction(txId) {
 }
 
 function applyTheme() {
-  document.documentElement.setAttribute('data-theme', state.theme === 'sunrise' ? 'sunrise' : 'nebula');
-  themeToggleBtn.textContent = state.theme === 'sunrise' ? 'Switch to nebula' : 'Switch theme';
+  const allowedThemes = new Set(['chain', 'nebula', 'sunrise']);
+  if (!allowedThemes.has(state.theme)) {
+    state.theme = 'chain';
+  }
+
+  document.documentElement.setAttribute('data-theme', state.theme);
+  themeSelect.value = state.theme;
+
+  if (state.theme === 'chain') {
+    themeToggleBtn.textContent = 'Switch to nebula';
+  } else if (state.theme === 'nebula') {
+    themeToggleBtn.textContent = 'Switch to sunrise';
+  } else {
+    themeToggleBtn.textContent = 'Switch to chain';
+  }
 }
 
 function toggleTheme() {
-  state.theme = state.theme === 'sunrise' ? 'nebula' : 'sunrise';
+  if (state.theme === 'chain') {
+    state.theme = 'nebula';
+  } else if (state.theme === 'nebula') {
+    state.theme = 'sunrise';
+  } else {
+    state.theme = 'chain';
+  }
   applyTheme();
   savePreferences();
   addActivity(`Theme switched to ${state.theme}.`);
