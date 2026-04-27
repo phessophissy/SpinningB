@@ -651,6 +651,16 @@ function handleSpinShortcut(event) {
     return;
   }
 
+  if (event.key.toLowerCase() === 's') {
+    toggleSound();
+    return;
+  }
+
+  if (event.key.toLowerCase() === 'o') {
+    applyOracleSuggestion();
+    return;
+  }
+
   const spin = shortcutMap[event.key];
   if (!spin) return;
 
@@ -879,6 +889,17 @@ function toggleTheme() {
   applyTheme();
   savePreferences();
   addActivity(`Theme switched to ${state.theme}.`);
+}
+
+function toggleSound() {
+  state.soundEnabled = !state.soundEnabled;
+  syncSoundUI();
+  savePreferences();
+  addActivity(state.soundEnabled ? 'Sound enabled.' : 'Sound muted.');
+}
+
+function syncSoundUI() {
+  soundToggleBtn.textContent = state.soundEnabled ? 'Sound on' : 'Sound off';
 }
 
 function setActivityFilter(nextFilter) {
