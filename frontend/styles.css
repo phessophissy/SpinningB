@@ -7,6 +7,33 @@
 }
 
 :root {
+  --bg: #080f1f;
+  --bg-soft: #0e1e3f;
+  --panel: rgba(9, 19, 43, 0.84);
+  --panel-strong: rgba(5, 14, 33, 0.94);
+  --panel-line: rgba(255, 151, 61, 0.24);
+  --text: #f6f9ff;
+  --muted: #a7b8da;
+  --muted-strong: #d8e4ff;
+  --accent: #ff8a3d;
+  --accent-soft: rgba(255, 138, 61, 0.2);
+  --cyan: #33d5ff;
+  --cyan-soft: rgba(51, 213, 255, 0.18);
+  --violet: #5fa8ff;
+  --violet-soft: rgba(95, 168, 255, 0.16);
+  --pink: #ffb347;
+  --pink-soft: rgba(255, 179, 71, 0.18);
+  --success: #65df93;
+  --error: #ff6b8f;
+  --warning: #ffd166;
+  --shadow: 0 30px 80px rgba(3, 9, 22, 0.56);
+  --radius-xl: 30px;
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+}
+
+:root[data-theme='nebula'] {
   --bg: #140b2b;
   --bg-soft: #101f44;
   --panel: rgba(22, 16, 56, 0.82);
@@ -23,14 +50,6 @@
   --violet-soft: rgba(141, 125, 255, 0.16);
   --pink: #ff62b0;
   --pink-soft: rgba(255, 98, 176, 0.18);
-  --success: #65df93;
-  --error: #ff6b8f;
-  --warning: #ffd166;
-  --shadow: 0 30px 80px rgba(5, 2, 20, 0.46);
-  --radius-xl: 30px;
-  --radius-lg: 22px;
-  --radius-md: 16px;
-  --radius-sm: 12px;
 }
 
 :root[data-theme='sunrise'] {
@@ -210,6 +229,21 @@ select {
   gap: 12px;
   flex-wrap: wrap;
   justify-content: flex-end;
+}
+
+.theme-label {
+  color: var(--muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.theme-select {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  padding: 10px 12px;
 }
 
 .wallet-info {
