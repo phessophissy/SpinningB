@@ -573,14 +573,42 @@ async function fetchSuggestedFee() {
 
 async function refreshNetworkDesk() {
   try {
-    const info = await fetchNetworkInfo();
-    state.networkTip = info.stacks_tip_height ?? info.burn_block_height ?? null;
+    const [{ payload, latencyMs }, mempoolTotal, feeRate] = await Promise.all([
+      fetchNetworkInfo(),
+      fetchMempoolPressure(),
+      fetchSuggestedFee(),
+    ]);
+    state.networkTip = payload.stacks_tip_height ?? payload.burn_block_height ?? null;
+    state.apiLatencyMs = latencyMs;
+    state.mempoolSize = mempoolTotal;
+    state.suggestedFeeMicroStx = feeRate;
+
     chainTip.textContent = state.networkTip ? `Tip ${state.networkTip}` : 'Tip unavailable';
-    nodeHealth.textContent = 'Mainnet online';
+    apiLatency.textContent = `${state.apiLatencyMs}ms`;
+    mempoolPressure.textContent = state.mempoolSize > 5000
+      ? `High (${state.mempoolSize.toLocaleString()})`
+      : state.mempoolSize > 2000
+        ? `Medium (${state.mempoolSize.toLocaleString()})`
+        : `Low (${state.mempoolSize.toLocaleString()})`;
+    suggestedFee.textContent = state.suggestedFeeMicroStx > 0
+      ? `${state.suggestedFeeMicroStx.toLocaleString()} uSTX`
+      : 'Unavailable';
+
+    state.riskSignal = state.apiLatencyMs > 1000 || state.mempoolSize > 5000
+      ? 'High latency / congestion'
+      : state.apiLatencyMs > 500 || state.mempoolSize > 2000
+        ? 'Moderate volatility'
+        : 'Stable route';
+    riskSignal.textContent = state.riskSignal;
+    nodeHealth.textContent = state.apiLatencyMs > 1000 ? 'Mainnet slow' : 'Mainnet online';
   } catch (error) {
     console.error('Failed to fetch network info:', error);
     chainTip.textContent = 'Tip unavailable';
     nodeHealth.textContent = 'Mainnet degraded';
+    apiLatency.textContent = 'Unavailable';
+    mempoolPressure.textContent = 'Unavailable';
+    suggestedFee.textContent = 'Unavailable';
+    riskSignal.textContent = 'Signal unavailable';
   }
 }
 
