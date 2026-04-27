@@ -132,6 +132,7 @@ const mempoolPressure = document.getElementById('mempoolPressure');
 const suggestedFee = document.getElementById('suggestedFee');
 const riskSignal = document.getElementById('riskSignal');
 const potSparkline = document.getElementById('potSparkline');
+const roundHeatBars = document.getElementById('roundHeatBars');
 const oracleSpin = document.getElementById('oracleSpin');
 const oracleConfidence = document.getElementById('oracleConfidence');
 const oracleReason = document.getElementById('oracleReason');
@@ -487,6 +488,27 @@ function renderPotSparkline() {
   ctx.stroke();
 }
 
+function renderRoundHeatBars() {
+  if (!roundHeatBars) return;
+
+  const { players, highest } = state.statsSnapshot;
+  roundHeatBars.innerHTML = '';
+
+  for (let i = 1; i <= ROUND_CAPACITY; i++) {
+    const bar = document.createElement('span');
+    bar.className = 'heat-bar';
+    const intensity = i <= players ? 0.25 + (i / ROUND_CAPACITY) * 0.75 : 0.12;
+    const isPeakBand = highest >= 8 && i >= 8;
+    const color = isPeakBand ? '255, 138, 61' : '51, 213, 255';
+    bar.style.opacity = String(intensity);
+    bar.style.background = `linear-gradient(180deg, rgba(${color}, ${Math.min(0.95, intensity)}), rgba(255, 255, 255, 0.1))`;
+    if (i === players) {
+      bar.style.transform = 'translateY(-3px)';
+    }
+    roundHeatBars.appendChild(bar);
+  }
+}
+
 function computeOracleSignal() {
   const { players, highest } = state.statsSnapshot;
 
@@ -605,6 +627,7 @@ async function loadGameStats({ reason = 'auto', withStatus = false } = {}) {
     updateRefreshLabels();
     renderDerivedDashboard();
     renderPotSparkline();
+    renderRoundHeatBars();
     computeOracleSignal();
     renderOracleSignal();
     refreshWalletDesk();
