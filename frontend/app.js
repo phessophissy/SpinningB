@@ -450,6 +450,41 @@ function renderSelectionRead() {
   }
 }
 
+function renderPotSparkline() {
+  if (!potSparkline) return;
+
+  const ctx = potSparkline.getContext('2d');
+  if (!ctx) return;
+
+  const values = state.potHistory.length ? state.potHistory : [0];
+  const max = Math.max(...values, 1);
+  const width = potSparkline.width;
+  const height = potSparkline.height;
+
+  ctx.clearRect(0, 0, width, height);
+
+  const gradient = ctx.createLinearGradient(0, 0, width, 0);
+  gradient.addColorStop(0, '#33d5ff');
+  gradient.addColorStop(0.5, '#5fa8ff');
+  gradient.addColorStop(1, '#ff8a3d');
+
+  ctx.strokeStyle = gradient;
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+
+  values.forEach((value, index) => {
+    const x = values.length === 1 ? 0 : (index / (values.length - 1)) * (width - 1);
+    const y = height - ((value / max) * (height - 10) + 5);
+    if (index === 0) {
+      ctx.moveTo(x, y);
+    } else {
+      ctx.lineTo(x, y);
+    }
+  });
+
+  ctx.stroke();
+}
+
 function renderDerivedDashboard() {
   renderSeatSignals();
   renderPrizeSignals();
