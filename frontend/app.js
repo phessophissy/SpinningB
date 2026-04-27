@@ -859,6 +859,16 @@ async function playGame() {
       postConditionMode: PostConditionMode.Allow,
       onFinish: ({ txId }) => {
         state.hasPlayed = true;
+        state.streak.consecutivePlays += 1;
+        state.streak.localPlays += 1;
+        state.streak.lastSpin = state.selectedSpin;
+        state.streak.peakSpin = Math.max(state.streak.peakSpin, state.selectedSpin);
+        if (state.oracle.spin && state.selectedSpin === state.oracle.spin) {
+          state.streak.oracleMatches += 1;
+        }
+        saveStreak();
+        renderStreak();
+        renderAchievements();
         syncWalletUI();
         persistLastTransaction(txId);
         renderLastTransaction();
