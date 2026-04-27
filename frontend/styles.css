@@ -424,6 +424,19 @@ select {
   box-shadow: var(--shadow);
 }
 
+.onboarding-tip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 22px;
+}
+
+.onboarding-tip p:last-child {
+  margin-top: 6px;
+  color: var(--muted-strong);
+}
+
 .round-progress-card {
   padding: 22px 24px;
 }

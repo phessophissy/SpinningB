@@ -25,6 +25,7 @@ const ACTIVITY_STORAGE_KEY = 'spinningb-session-activity';
 const LAST_TX_STORAGE_KEY = 'spinningb-last-tx';
 const PREFERENCES_STORAGE_KEY = 'spinningb-ui-preferences';
 const STREAK_STORAGE_KEY = 'spinningb-streak-profile';
+const ONBOARDING_DISMISSED_KEY = 'spinningb-onboarding-dismissed';
 const MAX_ACTIVITY_ITEMS = 6;
 const ROUND_CAPACITY = 10;
 const REFRESH_INTERVAL_MS = 30000;
@@ -129,6 +130,8 @@ const chainTip = document.getElementById('chainTip');
 const nodeHealth = document.getElementById('nodeHealth');
 const walletBalance = document.getElementById('walletBalance');
 const playBudget = document.getElementById('playBudget');
+const onboardingTip = document.getElementById('onboardingTip');
+const dismissOnboardingBtn = document.getElementById('dismissOnboardingBtn');
 const apiLatency = document.getElementById('apiLatency');
 const mempoolPressure = document.getElementById('mempoolPressure');
 const suggestedFee = document.getElementById('suggestedFee');
@@ -218,6 +221,7 @@ function initializeApp() {
   });
   window.addEventListener('keydown', handleSpinShortcut);
   window.addEventListener('scroll', syncScrollTopButton);
+  dismissOnboardingBtn?.addEventListener('click', dismissOnboardingTip);
 
   if (userSession.isUserSignedIn()) {
     const userData = userSession.loadUserData();
@@ -228,6 +232,7 @@ function initializeApp() {
 
   setActivityFilter(state.activityFilter);
   renderLastTransaction();
+  syncOnboardingTip();
   applyTheme();
   syncSoundUI();
   renderStreak();
@@ -1109,6 +1114,16 @@ function copyLastTransaction() {
 function syncScrollTopButton() {
   const shouldShow = window.scrollY > 600;
   scrollTopBtn?.classList.toggle('hidden', !shouldShow);
+}
+
+function dismissOnboardingTip() {
+  localStorage.setItem(ONBOARDING_DISMISSED_KEY, '1');
+  syncOnboardingTip();
+}
+
+function syncOnboardingTip() {
+  const dismissed = localStorage.getItem(ONBOARDING_DISMISSED_KEY) === '1';
+  onboardingTip?.classList.toggle('hidden', dismissed);
 }
 
 function loadStoredStreak() {
