@@ -536,7 +536,27 @@ function applyOracleSuggestion() {
     selectSpin(target);
     addActivity(`Applied oracle suggestion: spin ${state.oracle.spin}.`);
     showStatus(`Oracle loaded spin ${state.oracle.spin}.`, 'info');
+    playFeedbackTone('info');
   }
+}
+
+function playFeedbackTone(kind = 'info') {
+  if (!state.soundEnabled) return;
+
+  const Ctx = window.AudioContext || window.webkitAudioContext;
+  if (!Ctx) return;
+
+  const audioCtx = new Ctx();
+  const oscillator = audioCtx.createOscillator();
+  const gainNode = audioCtx.createGain();
+
+  oscillator.type = 'sine';
+  oscillator.frequency.value = kind === 'success' ? 660 : kind === 'error' ? 220 : 440;
+  gainNode.gain.value = 0.03;
+  oscillator.connect(gainNode);
+  gainNode.connect(audioCtx.destination);
+  oscillator.start();
+  oscillator.stop(audioCtx.currentTime + 0.08);
 }
 
 function renderDerivedDashboard() {
@@ -875,6 +895,7 @@ async function playGame() {
 
         showStatus(`Transaction submitted for spin ${state.selectedSpin}.`, 'success');
         addActivity(`Submitted spin ${state.selectedSpin}. Transaction pending on mainnet.`);
+        playFeedbackTone('success');
 
         playBtn.classList.remove('loading');
         playBtnText.textContent = 'Transaction Pending...';
@@ -888,6 +909,7 @@ async function playGame() {
       onCancel: () => {
         showStatus('Transaction cancelled before signing.', 'info');
         addActivity('Transaction signing was cancelled.');
+        playFeedbackTone('info');
         resetPlayButton();
       },
     });
@@ -895,6 +917,7 @@ async function playGame() {
     console.error('Transaction error:', error);
     showStatus(`Transaction error: ${error.message}`, 'error');
     addActivity('Transaction submission failed before broadcast.');
+    playFeedbackTone('error');
     resetPlayButton();
   }
 }
