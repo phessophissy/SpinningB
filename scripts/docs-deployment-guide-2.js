@@ -1,9 +1,9 @@
 /**
  * Script helper: docs-deployment-guide-2
- * Utility for: Deployment guide and runbook updates
+ * Utility for: Deployment guide and runbook
  */
 
-const SCRIPT_VERSION = '2.0.0';
+const SCRIPT_VERSION = '2.0.0-1777494794';
 
 function validateInput2(params) {
   const required = ['address', 'amount'];
