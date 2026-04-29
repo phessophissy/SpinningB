@@ -1,8 +1,8 @@
-# Referral system with tracking codes — Part 3
+# Referral system with rewards — Part 3
 
 ## Overview
 
-This document covers component 3 of the Referral system with tracking codes feature.
+This document covers component 3 of the Referral system with rewards feature.
 
 ## Configuration
 
@@ -23,4 +23,4 @@ const config = init3({ threshold: 8 });
 
 - Requires Node.js >= 18
 - Compatible with Stacks mainnet
-- Part 3 of 15 in this PR
+- Part 3 of 5 in this PR

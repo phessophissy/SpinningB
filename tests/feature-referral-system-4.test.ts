@@ -1,6 +1,6 @@
 /**
  * Test suite: feature-referral-system-4
- * Tests for: Referral system with tracking codes
+ * Tests for: Referral system with rewards
  */
 
 import { describe, it, expect } from 'vitest';
