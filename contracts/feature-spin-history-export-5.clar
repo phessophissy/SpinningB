@@ -1,5 +1,5 @@
 ;; Module: feature-spin-history-export-5
-;; Enhancement for: Spin history export functionality
+;; Enhancement for: Spin history export to CSV/JSON
 
 (define-constant MODULE-ID-5 u5)
 (define-constant MODULE-THRESHOLD-5 u500)
