@@ -1,6 +1,6 @@
 /**
  * Test suite: improvement-error-handling-4
- * Tests for: Improve error handling across frontend
+ * Tests for: Improved error handling and messages
  */
 
 import { describe, it, expect } from 'vitest';
