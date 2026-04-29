@@ -1,6 +1,6 @@
 /**
  * Test suite: feature-spin-history-export-4
- * Tests for: Spin history export functionality
+ * Tests for: Spin history export to CSV/JSON
  */
 
 import { describe, it, expect } from 'vitest';
