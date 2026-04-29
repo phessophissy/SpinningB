@@ -1,5 +1,5 @@
 ;; Module: feature-referral-system-5
-;; Enhancement for: Referral system with tracking codes
+;; Enhancement for: Referral system with rewards
 
 (define-constant MODULE-ID-5 u5)
 (define-constant MODULE-THRESHOLD-5 u500)
