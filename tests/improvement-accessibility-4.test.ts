@@ -1,6 +1,6 @@
 /**
  * Test suite: improvement-accessibility-4
- * Tests for: Accessibility improvements (ARIA, focus)
+ * Tests for: Accessibility improvements (WCAG)
  */
 
 import { describe, it, expect } from 'vitest';
