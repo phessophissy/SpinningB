@@ -1,6 +1,6 @@
 /**
  * Test suite: feature-achievement-badges-4
- * Tests for: Achievement badges and rewards system
+ * Tests for: Achievement badges and milestones
  */
 
 import { describe, it, expect } from 'vitest';
