@@ -1,5 +1,5 @@
 ;; Module: docs-deployment-guide-5
-;; Enhancement for: Deployment guide and runbook updates
+;; Enhancement for: Deployment guide and runbook
 
 (define-constant MODULE-ID-5 u5)
 (define-constant MODULE-THRESHOLD-5 u500)
