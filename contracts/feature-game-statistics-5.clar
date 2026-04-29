@@ -1,5 +1,5 @@
 ;; Module: feature-game-statistics-5
-;; Enhancement for: Game statistics dashboard
+;; Enhancement for: Game statistics and metrics
 
 (define-constant MODULE-ID-5 u5)
 (define-constant MODULE-THRESHOLD-5 u500)
