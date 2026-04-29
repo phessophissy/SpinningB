@@ -1,5 +1,5 @@
 ;; Module: feature-achievement-badges-5
-;; Enhancement for: Achievement badges and rewards system
+;; Enhancement for: Achievement badges and milestones
 
 (define-constant MODULE-ID-5 u5)
 (define-constant MODULE-THRESHOLD-5 u500)
