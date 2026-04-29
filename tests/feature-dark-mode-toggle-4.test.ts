@@ -1,6 +1,6 @@
 /**
  * Test suite: feature-dark-mode-toggle-4
- * Tests for: Dark mode toggle for frontend
+ * Tests for: Dark mode toggle feature
  */
 
 import { describe, it, expect } from 'vitest';
