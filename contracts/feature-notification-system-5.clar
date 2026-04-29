@@ -1,5 +1,5 @@
 ;; Module: feature-notification-system-5
-;; Enhancement for: In-app notification system
+;; Enhancement for: Notification system for game events
 
 (define-constant MODULE-ID-5 u5)
 (define-constant MODULE-THRESHOLD-5 u500)
