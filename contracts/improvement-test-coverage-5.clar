@@ -1,5 +1,5 @@
 ;; Module: improvement-test-coverage-5
-;; Enhancement for: Expand test coverage for core logic
+;; Enhancement for: Expanded test coverage
 
 (define-constant MODULE-ID-5 u5)
 (define-constant MODULE-THRESHOLD-5 u500)
