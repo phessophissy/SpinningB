@@ -1,5 +1,5 @@
 ;; Module: feature-add-sound-effects-5
-;; Enhancement for: Add sound effects to game interactions
+;; Enhancement for: Sound effects for game events
 
 (define-constant MODULE-ID-5 u5)
 (define-constant MODULE-THRESHOLD-5 u500)

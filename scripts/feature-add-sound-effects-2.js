@@ -1,9 +1,9 @@
 /**
  * Script helper: feature-add-sound-effects-2
- * Utility for: Add sound effects to game interactions
+ * Utility for: Sound effects for game events
  */
 
-const SCRIPT_VERSION = '2.0.0';
+const SCRIPT_VERSION = '2.0.0-1777494794';
 
 function validateInput2(params) {
   const required = ['address', 'amount'];
