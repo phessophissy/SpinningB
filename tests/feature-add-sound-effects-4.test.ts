@@ -1,6 +1,6 @@
 /**
  * Test suite: feature-add-sound-effects-4
- * Tests for: Add sound effects to game interactions
+ * Tests for: Sound effects for game events
  */
 
 import { describe, it, expect } from 'vitest';
