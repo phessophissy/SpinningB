@@ -1,5 +1,5 @@
 ;; Module: improvement-loading-states-5
-;; Enhancement for: Add loading states and skeleton screens
+;; Enhancement for: Loading states and skeleton screens
 
 (define-constant MODULE-ID-5 u5)
 (define-constant MODULE-THRESHOLD-5 u500)
