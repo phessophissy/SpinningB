@@ -1,5 +1,5 @@
 ;; Module: feature-multiplayer-mode-5
-;; Enhancement for: Add multiplayer mode foundation
+;; Enhancement for: Multiplayer mode enhancements
 
 (define-constant MODULE-ID-5 u5)
 (define-constant MODULE-THRESHOLD-5 u500)
