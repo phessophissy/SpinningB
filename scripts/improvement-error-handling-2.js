@@ -1,9 +1,9 @@
 /**
  * Script helper: improvement-error-handling-2
- * Utility for: Improve error handling across frontend
+ * Utility for: Improved error handling and messages
  */
 
-const SCRIPT_VERSION = '2.0.0';
+const SCRIPT_VERSION = '2.0.0-1777494794';
 
 function validateInput2(params) {
   const required = ['address', 'amount'];

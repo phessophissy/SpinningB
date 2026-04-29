@@ -1,5 +1,5 @@
 ;; Module: improvement-error-handling-5
-;; Enhancement for: Improve error handling across frontend
+;; Enhancement for: Improved error handling and messages
 
 (define-constant MODULE-ID-5 u5)
 (define-constant MODULE-THRESHOLD-5 u500)

@@ -1,8 +1,8 @@
-# Improve error handling across frontend — Part 3
+# Improved error handling and messages — Part 3
 
 ## Overview
 
-This document covers component 3 of the Improve error handling across frontend feature.
+This document covers component 3 of the Improved error handling and messages feature.
 
 ## Configuration
 
@@ -23,4 +23,4 @@ const config = init3({ threshold: 8 });
 
 - Requires Node.js >= 18
 - Compatible with Stacks mainnet
-- Part 3 of 15 in this PR
+- Part 3 of 5 in this PR
