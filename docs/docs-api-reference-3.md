@@ -1,8 +1,8 @@
-# Add comprehensive API reference docs — Part 3
+# API reference documentation — Part 3
 
 ## Overview
 
-This document covers component 3 of the Add comprehensive API reference docs feature.
+This document covers component 3 of the API reference documentation feature.
 
 ## Configuration
 
@@ -23,4 +23,4 @@ const config = init3({ threshold: 8 });
 
 - Requires Node.js >= 18
 - Compatible with Stacks mainnet
-- Part 3 of 15 in this PR
+- Part 3 of 5 in this PR
