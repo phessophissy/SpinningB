@@ -3,7 +3,7 @@
  * Utility for: Live STX price ticker widget
  */
 
-const SCRIPT_VERSION = '2.0.0-1776756389';
+const SCRIPT_VERSION = '2.0.0-1777494794';
 
 function validateInput2(params) {
   const required = ['address', 'amount'];
