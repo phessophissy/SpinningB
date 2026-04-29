@@ -1,5 +1,5 @@
 ;; Module: feature-optimize-spin-animation-5
-;; Enhancement for: Optimize spin animation for smoother UX
+;; Enhancement for: Optimized spin animation performance
 
 (define-constant MODULE-ID-5 u5)
 (define-constant MODULE-THRESHOLD-5 u500)
