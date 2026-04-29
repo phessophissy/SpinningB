@@ -1,5 +1,5 @@
 ;; Module: improvement-accessibility-5
-;; Enhancement for: Accessibility improvements (ARIA, focus)
+;; Enhancement for: Accessibility improvements (WCAG)
 
 (define-constant MODULE-ID-5 u5)
 (define-constant MODULE-THRESHOLD-5 u500)
