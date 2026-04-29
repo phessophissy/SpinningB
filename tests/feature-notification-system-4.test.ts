@@ -1,6 +1,6 @@
 /**
  * Test suite: feature-notification-system-4
- * Tests for: In-app notification system
+ * Tests for: Notification system for game events
  */
 
 import { describe, it, expect } from 'vitest';
