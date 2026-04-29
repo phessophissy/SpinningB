@@ -1,6 +1,6 @@
 /**
  * Test suite: feature-multiplayer-mode-4
- * Tests for: Add multiplayer mode foundation
+ * Tests for: Multiplayer mode enhancements
  */
 
 import { describe, it, expect } from 'vitest';
