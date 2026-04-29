@@ -1,6 +1,6 @@
 /**
  * Test suite: improvement-loading-states-4
- * Tests for: Add loading states and skeleton screens
+ * Tests for: Loading states and skeleton screens
  */
 
 import { describe, it, expect } from 'vitest';
