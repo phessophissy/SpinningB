@@ -1,8 +1,8 @@
-# Wallet analytics and balance tracking — Part 3
+# Wallet analytics and reporting — Part 3
 
 ## Overview
 
-This document covers component 3 of the Wallet analytics and balance tracking feature.
+This document covers component 3 of the Wallet analytics and reporting feature.
 
 ## Configuration
 
@@ -23,4 +23,4 @@ const config = init3({ threshold: 8 });
 
 - Requires Node.js >= 18
 - Compatible with Stacks mainnet
-- Part 3 of 15 in this PR
+- Part 3 of 5 in this PR

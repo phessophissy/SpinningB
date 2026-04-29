@@ -1,6 +1,6 @@
 /**
  * Test suite: feature-wallet-analytics-4
- * Tests for: Wallet analytics and balance tracking
+ * Tests for: Wallet analytics and reporting
  */
 
 import { describe, it, expect } from 'vitest';
