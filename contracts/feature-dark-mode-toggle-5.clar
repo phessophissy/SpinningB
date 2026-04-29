@@ -1,5 +1,5 @@
 ;; Module: feature-dark-mode-toggle-5
-;; Enhancement for: Dark mode toggle for frontend
+;; Enhancement for: Dark mode toggle feature
 
 (define-constant MODULE-ID-5 u5)
 (define-constant MODULE-THRESHOLD-5 u500)
