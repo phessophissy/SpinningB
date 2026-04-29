@@ -1,6 +1,6 @@
 /**
  * Test suite: improvement-test-coverage-4
- * Tests for: Expand test coverage for core logic
+ * Tests for: Expanded test coverage
  */
 
 import { describe, it, expect } from 'vitest';

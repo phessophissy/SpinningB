@@ -1,8 +1,8 @@
-# Expand test coverage for core logic — Part 3
+# Expanded test coverage — Part 3
 
 ## Overview
 
-This document covers component 3 of the Expand test coverage for core logic feature.
+This document covers component 3 of the Expanded test coverage feature.
 
 ## Configuration
 
@@ -23,4 +23,4 @@ const config = init3({ threshold: 8 });
 
 - Requires Node.js >= 18
 - Compatible with Stacks mainnet
-- Part 3 of 15 in this PR
+- Part 3 of 5 in this PR
