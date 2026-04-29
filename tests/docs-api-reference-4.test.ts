@@ -1,6 +1,6 @@
 /**
  * Test suite: docs-api-reference-4
- * Tests for: Add comprehensive API reference docs
+ * Tests for: API reference documentation
  */
 
 import { describe, it, expect } from 'vitest';
