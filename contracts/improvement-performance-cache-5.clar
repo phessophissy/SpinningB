@@ -1,5 +1,5 @@
 ;; Module: improvement-performance-cache-5
-;; Enhancement for: Performance optimizations and caching
+;; Enhancement for: Performance caching layer
 
 (define-constant MODULE-ID-5 u5)
 (define-constant MODULE-THRESHOLD-5 u500)

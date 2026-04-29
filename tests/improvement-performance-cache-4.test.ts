@@ -1,6 +1,6 @@
 /**
  * Test suite: improvement-performance-cache-4
- * Tests for: Performance optimizations and caching
+ * Tests for: Performance caching layer
  */
 
 import { describe, it, expect } from 'vitest';
