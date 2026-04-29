@@ -1,6 +1,6 @@
 /**
  * Test suite: feature-game-statistics-4
- * Tests for: Game statistics dashboard
+ * Tests for: Game statistics and metrics
  */
 
 import { describe, it, expect } from 'vitest';
