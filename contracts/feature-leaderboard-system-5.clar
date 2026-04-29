@@ -1,5 +1,5 @@
 ;; Module: feature-leaderboard-system-5
-;; Enhancement for: Implement leaderboard ranking system
+;; Enhancement for: Leaderboard system with rankings
 
 (define-constant MODULE-ID-5 u5)
 (define-constant MODULE-THRESHOLD-5 u500)

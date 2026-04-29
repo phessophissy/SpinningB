@@ -1,6 +1,6 @@
 /**
  * Test suite: feature-leaderboard-system-4
- * Tests for: Implement leaderboard ranking system
+ * Tests for: Leaderboard system with rankings
  */
 
 import { describe, it, expect } from 'vitest';
