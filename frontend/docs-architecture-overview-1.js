@@ -1,10 +1,9 @@
 /**
  * Module: docs-architecture-overview-1
  * Part of: Architecture overview documentation
- * Auto-generated enhancement for the Spinning Board frontend
  */
 
-export const MODULE_ID = 'docs-architecture-overview-1';
+export const MODULE_ID = 'docs-architecture-overview-1-1777494794';
 export const VERSION = '1.0.1';
 
 export function init1(config = {}) {
@@ -19,12 +18,10 @@ export function init1(config = {}) {
 
 export function process1(input) {
   if (!input) return { success: false, error: 'No input provided' };
-  const startTime = performance.now();
   const result = {
     processed: true,
     input,
     timestamp: Date.now(),
-    duration: performance.now() - startTime,
     module: MODULE_ID,
   };
   return { success: true, data: result };
