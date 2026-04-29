@@ -1,6 +1,6 @@
 /**
  * Test suite: docs-deployment-guide-4
- * Tests for: Deployment guide and runbook updates
+ * Tests for: Deployment guide and runbook
  */
 
 import { describe, it, expect } from 'vitest';
