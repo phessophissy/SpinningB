@@ -1,8 +1,8 @@
-# Accessibility improvements (ARIA, focus) — Part 3
+# Accessibility improvements (WCAG) — Part 3
 
 ## Overview
 
-This document covers component 3 of the Accessibility improvements (ARIA, focus) feature.
+This document covers component 3 of the Accessibility improvements (WCAG) feature.
 
 ## Configuration
 
@@ -23,4 +23,4 @@ const config = init3({ threshold: 8 });
 
 - Requires Node.js >= 18
 - Compatible with Stacks mainnet
-- Part 3 of 15 in this PR
+- Part 3 of 5 in this PR
