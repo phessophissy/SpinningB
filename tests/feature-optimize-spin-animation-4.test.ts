@@ -1,6 +1,6 @@
 /**
  * Test suite: feature-optimize-spin-animation-4
- * Tests for: Optimize spin animation for smoother UX
+ * Tests for: Optimized spin animation performance
  */
 
 import { describe, it, expect } from 'vitest';
