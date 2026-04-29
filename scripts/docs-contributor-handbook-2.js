@@ -3,7 +3,7 @@
  * Utility for: Contributor handbook and guidelines
  */
 
-const SCRIPT_VERSION = '2.0.0';
+const SCRIPT_VERSION = '2.0.0-1777494794';
 
 function validateInput2(params) {
   const required = ['address', 'amount'];
