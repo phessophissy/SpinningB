@@ -1,8 +1,8 @@
-# In-app notification system — Part 3
+# Notification system for game events — Part 3
 
 ## Overview
 
-This document covers component 3 of the In-app notification system feature.
+This document covers component 3 of the Notification system for game events feature.
 
 ## Configuration
 
@@ -23,4 +23,4 @@ const config = init3({ threshold: 8 });
 
 - Requires Node.js >= 18
 - Compatible with Stacks mainnet
-- Part 3 of 15 in this PR
+- Part 3 of 5 in this PR
