@@ -1,5 +1,5 @@
 ;; Module: feature-wallet-analytics-5
-;; Enhancement for: Wallet analytics and balance tracking
+;; Enhancement for: Wallet analytics and reporting
 
 (define-constant MODULE-ID-5 u5)
 (define-constant MODULE-THRESHOLD-5 u500)
